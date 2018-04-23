@@ -9,6 +9,24 @@
   </head>
 
   <body>
+    <!-- begin navigation -->
+    <nav>
+      <ul>
+        <!-- links must contain "_path" suffix -->
+        <li><%= link_to "Home", root_path %></li>
+        <li><%= link_to "About", simple_pages_about_path %></li>
+        <li><%= link_to "Contact", simple_pages_contact_path %></li>
+      </ul>
+    </nav>
+    <!-- end navigation -->
+
+    <!-- views -->
     <%= yield %>
+
+    <!-- begin footer -->
+    <footer>
+      &copy; 2018 AZ-JEM
+    </footer>
+    <!-- end footer -->
   </body>
 </html>
