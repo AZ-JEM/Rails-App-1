@@ -1,3 +1,151 @@
 // Place all the styles related to the simple_pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// ====================================================================== /
+// global variables
+// ====================================================================== /
+// colors
+$color-lo: orange;
+$color-med: DarkOrange;
+$color-hi: yellow;
+$color-text: #eee;
+$color-nav: #555;
+$gradient-start: rgba(0, 0, 255, 1/3);
+$gradient-end: rgba(0, 255, 0, 1/3);
+// metrics
+$nav-height: 7rem;
+
+// ====================================================================== /
+// mixins
+// ====================================================================== /
+@mixin col-margin {
+  .col {
+    margin-top: 1rem;
+  }
+}
+
+// ====================================================================== /
+// html configurationo
+// ====================================================================== /
+html {
+  // simplify rem calculations
+  font-size: 10px;
+  // viewport
+  height: 100%;
+  width: 100%;
+}
+
+// ====================================================================== /
+// body configuration
+// ====================================================================== /
+body {
+  // font stack
+  font: 2.0rem/3.0rem Arial, Helvetica, sans-serif;
+  // background
+  background-image: linear-gradient(to bottom right, $gradient-start, $gradient-end);
+  // default text
+  color: $color-text;
+}
+
+// ====================================================================== /
+// navigation  (with nesting!)
+// ====================================================================== /
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: $color-nav;
+
+  // ----------------------------------- /
+  // columns
+  // ----------------------------------- /
+  @include col-margin;
+
+  // ----------------------------------- /
+  // anchors
+  // ----------------------------------- /
+  a {
+    color: $color-lo;
+
+    &:hover {
+      color: $color-hi;
+    }
+
+    &:link {
+      text-decoration: none;
+    }
+  }
+}
+
+// ====================================================================== /
+// views centered in viewport
+// ====================================================================== /
+
+// ----------------------------------- /
+// local viewport
+// ----------------------------------- /
+#view-container {
+  position: absolute;
+  // top: $nav-height;
+  left: 0;
+  margin: $nav-height 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: -1;
+}
+
+// ----------------------------------- /
+// div containing rendered views
+// ----------------------------------- /
+#view-div {
+  position: relative;
+  margin: 0 10% 0 10%;
+  padding: 2rem;
+  background: rgba($color-nav, 2/3);
+  border: 1px solid black;
+  border-radius: 2rem;
+
+  p, .center {
+    text-align: center;
+  }
+
+  .img {
+    border-radius: 100px;
+    height: 50vh;
+  }
+}  // view-div
+
+// ====================================================================== /
+// footer
+// ====================================================================== /
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: $color-nav;
+  color: $color-lo;
+  text-align: center;
+
+  // ----------------------------------- /
+  // columns
+  // ----------------------------------- /
+  @include col-margin;
+
+}
+
+// ====================================================================== /
+//  Let's get responsive...
+// ====================================================================== /
+@media (min-height: 1024px) {
+  #view-container {
+    margin: 0;
+  }
+  // div containing rendered views
+  #view-div {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}

@@ -1,32 +1,28 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RailsApp1</title>
+    <title>First Rails Application</title>
+    <!-- cross site request forgery protection -->
     <%= csrf_meta_tags %>
-
+    <!-- resource configuration and imports -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- replace with sprockets ? -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </head>
 
   <body>
-    <!-- begin navigation -->
-    <nav>
-      <ul>
-        <!-- links must contain "_path" suffix -->
-        <li><%= link_to "Home", root_path %></li>
-        <li><%= link_to "About", simple_pages_about_path %></li>
-        <li><%= link_to "Contact", simple_pages_contact_path %></li>
-      </ul>
-    </nav>
-    <!-- end navigation -->
-
+    <!-- navigation partial -->
+    <%= render 'layouts/navigation' %>
     <!-- views -->
-    <%= yield %>
-
-    <!-- begin footer -->
-    <footer>
-      &copy; 2018 AZ-JEM
-    </footer>
-    <!-- end footer -->
+    <div  id="view-container" class="container">
+      <div id="view-div">
+        <%= yield %>
+      </div>
+    </div>
+    <!-- footer partial -->
+    <%= render 'layouts/footer' %>
   </body>
 </html>
