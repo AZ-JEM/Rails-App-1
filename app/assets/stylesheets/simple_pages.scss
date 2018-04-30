@@ -80,7 +80,7 @@ nav {
   // ----------------------------------- /
   //  anchors
   // ----------------------------------- /
-  a {
+  .nav-link {
     color: $color-lo;
 
     &:hover {
@@ -89,6 +89,12 @@ nav {
 
     &:link {
       text-decoration: none;
+
+      // I'm not smart enough to make this stick just yet...
+      // (persistent page reload prevents setting from script)
+      &.selected {
+        background: #000;
+      }
     }
   }
 }
@@ -123,13 +129,9 @@ nav {
   border: 1px solid black;
   border-radius: 2rem;
 
-  p, .center {
-    text-align: center;
-  }
-
   .img {
     border-radius: 100px;
-    height: 50vh;
+    height: 45vh;
   }
 }  // view-div
 
@@ -155,7 +157,7 @@ footer {
 // ====================================================================== /
 //  Let's get responsive...
 // ====================================================================== /
-@media (min-height: 1024px) {
+@media (min-height: 768px) {
   #view-container {
     margin: 0;
   }
