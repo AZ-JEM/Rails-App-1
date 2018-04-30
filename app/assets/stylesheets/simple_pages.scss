@@ -26,20 +26,6 @@ $nav-height: 7rem;
 }
 
 // ====================================================================== /
-//  animations
-// ====================================================================== /
-@keyframes view-enter {
-  from {
-    transform: scale(0.1);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1.0);
-    opacity: 1;
-  }
-}
-
-// ====================================================================== /
 //  html configurationo
 // ====================================================================== /
 html {
@@ -87,19 +73,8 @@ nav {
       color: $color-hi;
     }
 
-    // also clobbered by persistent reload...
-    &:active {
-      background: #000;
-    }
-
     &:link {
       text-decoration: none;
-
-      // I'm not smart enough to make this stick just yet...
-      // (persistent page reload prevents setting from script)
-      &.selected {
-        background: #000;
-      }
     }
   }
 }
@@ -113,14 +88,11 @@ nav {
 // ----------------------------------- /
 #view-container {
   position: absolute;
-  // top: $nav-height;
   left: 0;
   margin: $nav-height 0;
   height: 100vh;
   width: 100vw;
   z-index: -1;
-  // animation
-  animation: 500ms view-enter;
 }
 
 // ----------------------------------- /
