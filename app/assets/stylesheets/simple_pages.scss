@@ -87,6 +87,11 @@ nav {
       color: $color-hi;
     }
 
+    // also clobbered by persistent reload...
+    &:active {
+      background: #000;
+    }
+
     &:link {
       text-decoration: none;
 

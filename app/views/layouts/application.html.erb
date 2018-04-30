@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+
     <title>First Rails Application</title>
     <!-- cross site request forgery protection -->
     <%= csrf_meta_tags %>
@@ -11,17 +12,21 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
   </head>
 
   <body>
+
     <!-- navigation partial -->
     <%= render 'layouts/navigation' %>
+
     <!-- views -->
     <div  id="view-container" class="container">
       <div id="view-div">
         <%= yield %>
       </div>
     </div>
+
     <!-- footer partial -->
     <%= render 'layouts/footer' %>
 
