@@ -1,18 +1,30 @@
 <!-- begin navigation -->
 <nav class="container-fluid">
   <div class="row">
+    <!-- left -->
     <div class="left col col-md-4 text-left hidden-xs">
-      <p><em>AZ-JEM</em></p>
+      <p id="brand"><strong><em>AZ-JEM</em></strong></p>
     </div>
+    <!-- center  -->
     <div class="center col col-md-4 text-center hidden-xs">
-      <p>Jeff McCarley</p>
+      <p>&lt/&gt</p>
     </div>
+    <!-- right -->
     <div class="right col col-md-4">
+      <!-- links must contain "_path" suffix -->
       <ul class="list list-unstyled list-inline text-right">
-        <!-- links must contain "_path" suffix -->
-        <li><%= link_to "Home", root_path, class:"nav-link" %></li>
-        <li><%= link_to "About", simple_pages_about_path, class:"nav-link" %></li>
-        <li><%= link_to "Contact", simple_pages_contact_path, class:"nav-link" %></li>
+        <!-- home -->
+        <li class="<%= 'selected' if current_page?(root_path) %>">
+          <%= link_to "Home", root_path, class:"nav-link", title:"Landing page", toggle:"tooltip", "data-placement":"bottom" %>
+        </li>
+        <!-- about -->
+        <li class="<%= 'selected' if current_page?(simple_pages_about_path) %>">
+          <%= link_to "About", simple_pages_about_path, class:"nav-link", title:"About me", toggle:"tooltip", "data-placement":"bottom" %>
+        </li>
+        <!-- contact -->
+        <li class="<%= 'selected' if current_page?(simple_pages_contact_path) %>">
+          <%= link_to "Contact", simple_pages_contact_path, class:"nav-link", title:"Contact information", toggle:"tooltip", "data-placement":"bottom" %>
+        </li>
       </ul>
     </div>
     <!-- col -->

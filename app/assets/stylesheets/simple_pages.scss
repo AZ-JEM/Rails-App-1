@@ -6,9 +6,9 @@
 //  global variables
 // ====================================================================== /
 // colors
-$color-lo: orange;
-$color-med: DarkOrange;
-$color-hi: yellow;
+$color-lo: #f6a326;
+$color-med: #f1b150;
+$color-hi: #faf706;
 $color-text: #eee;
 $color-nav: #555;
 $gradient-start: rgba(0, 0, 255, 1/3);
@@ -23,6 +23,39 @@ $nav-height: 7rem;
   .col {
     margin-top: 1rem;
   }
+}
+
+// ====================================================================== /
+//  view animation
+// ====================================================================== /
+@keyframes view-enter {
+  from {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1.0);
+    opacity: 1;
+  }
+}
+
+.enter {
+  animation: 750ms ease view-enter;
+}
+
+@keyframes view-exit {
+  from {
+    transform: scale(1.0);
+    opacity: 1;
+  }
+  to {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+}
+
+.exit {
+  animation: 750ms view-exit;
 }
 
 // ====================================================================== /
@@ -49,7 +82,7 @@ body {
 }
 
 // ====================================================================== /
-//  navigation  (with nesting!)
+//  navigation
 // ====================================================================== /
 nav {
   position: fixed;
@@ -64,9 +97,16 @@ nav {
   @include col-margin;
 
   // ----------------------------------- /
+  //  list items
+  // ----------------------------------- /
+  li.selected {
+    background: #000;
+  }
+
+  // ----------------------------------- /
   //  anchors
   // ----------------------------------- /
-  .nav-link {
+  a {
     color: $color-lo;
 
     &:hover {
@@ -76,8 +116,11 @@ nav {
     &:link {
       text-decoration: none;
     }
+
   }
 }
+
+#brand { color: $color-lo; }
 
 // ====================================================================== /
 //  views centered in viewport
@@ -105,6 +148,7 @@ nav {
   background: rgba($color-nav, 2/3);
   border: 1px solid black;
   border-radius: 2rem;
+  box-shadow: 1rem 1rem 0.75rem 0.5rem rgba($color-nav, 1/5);
 
   .img {
     border-radius: 100px;
