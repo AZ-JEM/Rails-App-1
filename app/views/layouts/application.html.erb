@@ -7,6 +7,7 @@
     <%= csrf_meta_tags %>
     <!-- resource configuration and imports -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- normalize animation behaviour on Heroku -->
     <meta name="turbolinks-cache-control" content="no-cache">
     <!-- replace with sprockets ? -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -21,8 +22,9 @@
     <!-- navigation partial -->
     <%= render 'layouts/navigation' %>
 
-    <!-- views -->
-    <div  id="view-container" class="container enter">
+    <!-- views... -->
+    <div id="view-container" class="container enter">
+      <!-- ...shall be centered in viewport -->
       <div id="view-div">
         <%= yield %>
       </div>

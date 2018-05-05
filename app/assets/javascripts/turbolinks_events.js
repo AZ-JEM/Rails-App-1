@@ -40,14 +40,6 @@ document.addEventListener('turbolinks:render', function() {
 $(document).on('turbolinks:load', function() {
   // enable tooltips :
   $('[toggle="tooltip"]').tooltip();  // acceptable
-  //  apply fade-in css animation :
-  //  Issues on Heroku...
-  // $('#view-container').toggleClass('enter');
-  // attempt jQuery animations instead :
-  // index page flashing on local host (arg)
-  // $('#view-container').fadeIn(1000);
-  // one to one, though on logs...
-  console.log("tl:load...");
 });
 
 // document.addEventListener('turbolinks:load', function() {
