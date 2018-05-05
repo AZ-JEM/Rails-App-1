@@ -26,7 +26,10 @@ $nav-height: 7rem;
 }
 
 // ====================================================================== /
-//  view animation
+//  view animation :
+//   - works fine on local host
+//   - strange behaviour on Heroku
+//     (occurs post page cache)
 // ====================================================================== /
 @keyframes view-enter {
   from {
@@ -131,6 +134,10 @@ nav {
 // ----------------------------------- /
 #view-container {
   position: absolute;
+  // initailize to none for jQuery fadeIn():
+  // - works fine on local host
+  // - odd behaviour on yeild of root from Heroku
+  // display: none;
   left: 0;
   margin: $nav-height 0;
   height: 100vh;

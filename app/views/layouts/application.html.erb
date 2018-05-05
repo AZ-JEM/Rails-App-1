@@ -7,6 +7,7 @@
     <%= csrf_meta_tags %>
     <!-- resource configuration and imports -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="turbolinks-cache-control" content="no-cache">
     <!-- replace with sprockets ? -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -21,7 +22,7 @@
     <%= render 'layouts/navigation' %>
 
     <!-- views -->
-    <div  id="view-container" class="container">
+    <div  id="view-container" class="container enter">
       <div id="view-div">
         <%= yield %>
       </div>
