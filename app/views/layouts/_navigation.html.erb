@@ -15,23 +15,18 @@
       <ul class="list list-unstyled list-inline text-right">
         <!-- home -->
         <li class="<%= 'selected' if current_page?(root_path) %>">
+          <i class="fas fa-home"></i>
           <%= link_to "Home", root_path,
             class:"nav-link",
             title:"Landing page",
             toggle:"tooltip", "data-placement":"bottom" %>
         </li>
-        <!-- about -->
-        <li class="<%= 'selected' if current_page?(simple_pages_about_path) %>">
-          <%= link_to "About", simple_pages_about_path,
+        <!-- products -->
+        <li class="<%= 'selected' if current_page?(products_path) %>">
+          <i class="fas fa-cubes"></i>
+          <%= link_to "Products", products_path,
             class:"nav-link",
-            title:"About me",
-            toggle:"tooltip", "data-placement":"bottom" %>
-        </li>
-        <!-- contact -->
-        <li class="<%= 'selected' if current_page?(simple_pages_contact_path) %>">
-          <%= link_to "Contact", simple_pages_contact_path,
-            class:"nav-link",
-            title:"Contact information",
+            title:"List all products...",
             toggle:"tooltip", "data-placement":"bottom" %>
         </li>
       </ul>
