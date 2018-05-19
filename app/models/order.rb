@@ -1,3 +1,3 @@
-class Order < ActiveRecord
+class Order < ApplicationRecord
   belongs_to :product
 end
