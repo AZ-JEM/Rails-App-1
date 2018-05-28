@@ -62,6 +62,26 @@ body {
 }
 
 // ====================================================================== /
+//   demo clock
+// ====================================================================== /
+#info {
+  display: block;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  z-index: -1;
+}
+#demo {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto 0 auto;
+  padding: 0;
+  border: 1px solid black;
+  z-index: 1;
+}
+
+// ====================================================================== /
 //  navigation
 // ====================================================================== /
 nav {
@@ -129,13 +149,18 @@ nav {
   border: 1px solid black;
   border-radius: 2rem;
   box-shadow: 1rem 1rem 0.75rem 0.5rem rgba($color-nav, 1/5);
-
-  .img {
-    border-radius: 100px;
-    height: 45vh;
-  }
 }  // view-div
 
+#carousel-example-generic {
+  // height: 400px;
+  img {
+    margin-top: 30px;
+  }
+  h3 {
+    margin-top: 30px;
+    // margin-bottom: 30px;
+  }
+}
 // ====================================================================== /
 //  footer
 // ====================================================================== /

@@ -16,14 +16,14 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/p5.js"></script>
 
   </head>
 
   <body>
 
     <!-- navigation partial -->
-    <%= render 'layouts/navigation' %>
-
+    <%= render 'partials/navigation' %>
     <!-- views... -->
     <div id="view-container" class="container enter">
       <!-- ...shall be centered in viewport -->
@@ -33,7 +33,7 @@
     </div>
 
     <!-- footer partial -->
-    <%= render 'layouts/footer' %>
+    <%= render 'partials/footer' %>
 
   </body>
 </html>
