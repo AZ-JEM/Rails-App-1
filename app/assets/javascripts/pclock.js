@@ -9,25 +9,25 @@
 //    -create clock array
 // ---------------------------------------------------------------------- /
 // Rotation offset to bring midnight to PI/2 radians (90deg)
-let DELTA_OFFSET;
+var DELTA_OFFSET;
 // Frames Per Second
-const FPS = 10;
+var  FPS = 10;
 // Radians Per Second : calculated in setup()
-let RPS;
+var RPS;
 // Current time
-let hh;     // hour
-let mm;     // minute
-let ss;     // second
+var hh;     // hour
+var mm;     // minute
+var ss;     // second
 // Current angles
-let thetaSecond = 0;
-let thetaMinute = 0;
-let thetaHour = 0;
+var thetaSecond = 0;
+var thetaMinute = 0;
+var thetaHour = 0;
 // Figure metrics
-let figureSize = 0.0;
-let shapeRadius = 0.0;
+var figureSize = 0.0;
+var shapeRadius = 0.0;
 // Pre-defined clock themes :
-let themeIndex = 0;
-let themes = [
+var themeIndex = 0;
+var themes = [
   {
     name : "Red",
     colorSecond : "#F00",
@@ -138,8 +138,8 @@ function drawMarkers() {
   noStroke();
   fill("#555");
   //
-  for (let i = 0; i < 60; i++) {
-    let theta = RPS * i;
+  for (var i = 0; i < 60; i++) {
+    var theta = RPS * i;
     //
     if ((i % 5) == 0) {
       // major
@@ -257,8 +257,8 @@ function setup() {
   // PI is now available...
   DELTA_OFFSET = -(PI / 2.0);
   // configure canvas...
-//  let containerSize = document.getElementById("container").clientWidth;
-  let containerSize = 300;
+//  var containerSize = document.getElementById("container").clientWidth;
+  var containerSize = 300;
   figureSize = containerSize * 0.75;
   shapeRadius = figureSize  / 2;
   createCanvas(containerSize, containerSize).parent(document.getElementById("canvas"));
