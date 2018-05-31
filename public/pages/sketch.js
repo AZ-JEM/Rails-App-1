@@ -1,4 +1,3 @@
-
 // ---------------------------------------------------------------------- /
 //  p5.js Polar Clock v1.0.0
 //  Jeff McCarley : 180526
@@ -9,25 +8,25 @@
 //    -create clock array
 // ---------------------------------------------------------------------- /
 // Rotation offset to bring midnight to PI/2 radians (90deg)
-var DELTA_OFFSET;
+let DELTA_OFFSET;
 // Frames Per Second
-var  FPS = 10;
+const FPS = 10;
 // Radians Per Second : calculated in setup()
-var RPS;
+let RPS;
 // Current time
-var hh;     // hour
-var mm;     // minute
-var ss;     // second
+let hh;     // hour
+let mm;     // minute
+let ss;     // second
 // Current angles
-var thetaSecond = 0;
-var thetaMinute = 0;
-var thetaHour = 0;
+let thetaSecond = 0;
+let thetaMinute = 0;
+let thetaHour = 0;
 // Figure metrics
-var figureSize = 0.0;
-var shapeRadius = 0.0;
+let figureSize = 0.0;
+let shapeRadius = 0.0;
 // Pre-defined clock themes :
-var themeIndex = 0;
-var themes = [
+let themeIndex = 0;
+let themes = [
   {
     name : "Red",
     colorSecond : "#F00",
@@ -138,8 +137,8 @@ function drawMarkers() {
   noStroke();
   fill("#555");
   //
-  for (var i = 0; i < 60; i++) {
-    var theta = RPS * i;
+  for (let i = 0; i < 60; i++) {
+    let theta = RPS * i;
     //
     if ((i % 5) == 0) {
       // major
@@ -155,7 +154,7 @@ function drawMarkers() {
 //
 // ---------------------------------------------------------------------- /
 function drawHands() {
-  //
+  // let's get polar!
   stroke(themes[themeIndex].colorFace);
   strokeWeight(3);
   // Hour arc
@@ -234,8 +233,6 @@ function softClock() {
 //
 // ---------------------------------------------------------------------- /
 function setup() {
-  // if (location.pathname == "/simple_pages/demo") {
-
   // photogenic time
   // hh = 4;
   // mm = 40;
@@ -257,8 +254,8 @@ function setup() {
   // PI is now available...
   DELTA_OFFSET = -(PI / 2.0);
   // configure canvas...
-//  var containerSize = document.getElementById("container").clientWidth;
-  var containerSize = 300;
+  let containerSize = document.getElementById("demo").clientWidth;
+  // let containerSize = 300;
   figureSize = containerSize * 0.75;
   shapeRadius = figureSize  / 2;
   createCanvas(containerSize, containerSize).parent(document.getElementById("canvas"));
@@ -269,19 +266,17 @@ function setup() {
   // render first frame
   drawFrame();
 }
-// }
 
 // ---------------------------------------------------------------------- /
 //
 // ---------------------------------------------------------------------- /
 function draw() {
-  // if (location.pathname == "/simple_pages/demo") {
   // one frame per second
   if (frameCount % FPS == 0) {
     // update time data :
     softClock();
     // step through themes
-    if (ss%15 == 0) {
+    if (ss == 0) {
       themeIndex = (themeIndex < themes.length-1) ? themeIndex+1 : 0;
     }
     // draw a single frame
@@ -291,7 +286,6 @@ function draw() {
     // save(themes[themeIndex].name + '.png');
   }
 }
-// }
 
 // ---------------------------------------------------------------------- /
 //

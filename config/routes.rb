@@ -3,13 +3,17 @@ Rails.application.routes.draw do
   # get 'simple_pages/index'
 
   # root 'simple_pages#index'
-  root 'simple_pages#landing_page'
 
-  get 'simple_pages/demo'
+  get '/demo', :to => redirect('pages/demo.html')
+
+  # get 'simple_pages/demo'
+  get 'simple_pages/landing_page'
 
   resources :products
 
   # Exercise 4.3
   resources :orders, only: [:index, :show, :create, :destroy]
+
+  root 'simple_pages#landing_page'
 
 end
