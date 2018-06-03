@@ -7,24 +7,84 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/p5.js"></script>
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Permanent+Marker">
   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href="main.css">
-  <title>Polar Pie Demo</title>
+
+  <title>Polar Clock Demo</title>
+
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      width: 100vw;
+      height: 100vh;
+      background: linear-gradient(to bottom, rgba(0, 0, 255, 0.5), rgba(0, 255, 0, 0.5));
+    }
+
+    html {
+      font-size: 10px;
+    }
+
+    @keyframes view-enter {
+      from {
+        transform: scale(0.1);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1.0);
+        opacity: 1;
+      }
+    }
+
+    .enter {
+      animation: 750ms ease view-enter;
+    }
+
+    main {
+      position: absolute;
+      left:0;
+      top: 0;
+      height: 100vh;
+      width: 100vw;
+      /* border: 3px solid red; */
+    }
+
+    #demo {
+      position: relative;
+      border: 1px solid black;
+      width: 33%;
+      background-color: #AAA;
+      margin: 0 auto;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .btn {
+      font-size: 2rem;
+    }
+
+</style>
 
 </head>
 
 <body>
-
-  <div id="demo">
-    <!-- <h3>Polar Pie Clock</h3> -->
-    <!-- p5.js canvas -->
-    <div id="canvas"></div>
-  </div>
+  <main class="enter">
+    <div id="demo">
+      <h3 class="text-center">Polar Clock Demo</h3>
+      <div id="canvas">
+        <!-- p5.js canvas -->
+      </div>
+      <a class="btn btn-default center-block" href="/" role="button">Home</a>
+    </div>
+  </main>
 
   <!-- bootstrap dependencies -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <!-- current product -->
-  <script src="sketch.js"></script>
+  <script src="polar.js"></script>
 
 </body>
 </html>

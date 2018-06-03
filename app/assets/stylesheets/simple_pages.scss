@@ -62,26 +62,6 @@ body {
 }
 
 // ====================================================================== /
-//   demo clock
-// ====================================================================== /
-#info {
-  display: block;
-  position: absolute;
-  top: 5px;
-  left: 5px;
-  z-index: -1;
-}
-#demo {
-  position: relative;
-  width: 300px;
-  height: 300px;
-  margin: 0 auto 0 auto;
-  padding: 0;
-  border: 1px solid black;
-  z-index: 1;
-}
-
-// ====================================================================== /
 //  navigation
 // ====================================================================== /
 nav {
@@ -140,7 +120,7 @@ nav {
   // height: 100vh * 1rem;
   width: 100vw;
   z-index: -1;
-  border: 1px solid $color-nav;
+  // border: 1px solid $color-nav;
 }
 
 // ----------------------------------- /

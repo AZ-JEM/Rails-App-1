@@ -29,6 +29,14 @@
             title:"List all products...",
             toggle:"tooltip", "data-placement":"bottom" %>
         </li>
+        <!-- demo -->
+        <li class="<%= 'selected' if current_page?(demo_path) %>">
+          <i class="fas fa-clock"></i>
+          <%= link_to "Demo", demo_path,
+            class:"nav-link",
+            title:"Running demonstration...",
+            toggle:"tooltip", "data-placement":"bottom" %>
+        </li>
       </ul>
     </div>
     <!-- col -->
