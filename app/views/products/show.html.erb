@@ -11,8 +11,8 @@
 </p>
 
 <p>
-  <strong>Image url:</strong>
-  <%= @product.image_url %>
+  <strong>Image:</strong>
+  <%= image_tag(@product.image_url, class: "img-responsive center-block") %>
 </p>
 
 <p>
@@ -20,5 +20,7 @@
   <%= @product.price %>
 </p>
 
-<%= link_to 'Edit', edit_product_path(@product), class:"btn btn-success" %> |
-<%= link_to 'Back', products_path, class:"btn btn-primary" %>
+<hr>
+
+<%= link_to 'Edit', edit_product_path(@product), class:"btn btn-md btn-success" %> |
+<%= link_to 'Products', products_path, class:"btn btn-md btn-default" %>
