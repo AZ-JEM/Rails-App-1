@@ -3,9 +3,10 @@
 # ---------------------------------------------------------------------- /
 $(document).on 'turbolinks:load', ->
 # $(document).on 'page:change', ->
+
   # report current scope
-  console.log($('body').data('controller'));
-  console.log($('body').data('action'));
+  # console.log($('body').data('controller'));
+  # console.log($('body').data('action'));
 
   # filter for scope we are targeting :
 
@@ -20,8 +21,8 @@ $(document).on 'turbolinks:load', ->
   return unless page.controller() == 'simple_pages' && page.action() == 'landing_page'
 
   # proof we made it...
-  console.log('Arrived at target...');
-  console.log(location.pathname);
+  # console.log('Arrived at target...');
+  # console.log(location.pathname);
 
   # ...Load to script tag with ID of "sketch" ...
   # $('#sketch').load('clock.js');

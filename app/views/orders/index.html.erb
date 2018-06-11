@@ -3,22 +3,22 @@
 <!-- orders -->
 <div class="row">
   <% @orders.each do |order| %>
-    <div class="col-sm-2 col-md-4">
-      <h1>Order # <%= order.id %></h1>
+    <div class="col-xs-3 col-md-4">
+      <h3>Order # <%= order.id %></h3>
     </div>
     <!-- end column -->
   <% end %>
 </div>
 <!-- end row -->
-
+<hr>
 <!-- product detail -->
 <div class="row">
   <% @orders.each do |order| %>
-    <div class="col-sm-2 col-md-4">
-      <h1>
-        Order # <%= order.id %>:
-        <%= link_to order.product.name, order %>
-      </h1>
+    <div class="col-xs-3 col-md-4">
+      <p>
+        Detail : <%= order.id %>:
+        <%= link_to order.product.name, order, class:"btn btn-info" %>
+      </p>
       <p><%= order.product.description %></p>
       <strong>$ <%= order.product.price %></strong>
     </div>
