@@ -25,7 +25,7 @@
           <td><%= product.name %></td>
           <td><%= product.description %></td>
           <td><%= product.image_url %></td>
-          <td><%= product.price %></td>
+          <td><%= number_to_currency(product.price) %></td>
           <!-- actions... -->
           <td>
             <!-- <i class="fas fa-eye"></i> -->
