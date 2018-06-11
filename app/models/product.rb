@@ -3,6 +3,8 @@ class Product < ApplicationRecord
 
   validates :name, presence: true, length: { in: 3..20 }
   validates :description, presence: true
-  validates :price, presence: true, numericality: { less_than: 0.99, greater_than: 0.05 }
+  # range is not inclusive
+  # therefore {1..99} cent price range
+  validates :price, presence: true, numericality: { greater_than: 0.0, less_than: 1.0 }
 
 end
