@@ -10,9 +10,9 @@
       <!-- links must contain "_path" suffix -->
       <ul class="list list-unstyled list-inline text-right">
         <!-- home -->
-        <li class="<%= 'selected' if current_page?(root_path) %>">
+        <li class="<%= 'selected' if current_page?(home_path) %>">
           <i class="fas fa-home"></i>
-          <%= link_to "Home", root_path,
+          <%= link_to "Home", home_path,
             class:"nav-link",
             title:"Landing page",
             toggle:"tooltip", "data-placement":"bottom" %>
@@ -34,9 +34,9 @@
             toggle:"tooltip", "data-placement":"bottom" %>
         </li>
         <!-- demo -->
-        <li class="<%= 'selected' if current_page?(demo_path) %>">
+        <li class="<%= 'selected' if current_page?(root_path) %>">
           <i class="fas fa-clock"></i>
-          <%= link_to "Demo", demo_path,
+          <%= link_to "Demo", root_path,
             class:"nav-link",
             title:"Running demonstration...",
             toggle:"tooltip", "data-placement":"bottom" %>

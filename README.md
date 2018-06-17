@@ -1,3 +1,8 @@
 # README
-Howdy, this is the repository for my first Ruby on Rails application...
--Jeff
+# ---------------------------------------------------------------------- /
+# Exercise 5.1
+# ---------------------------------------------------------------------- /
+#   Entities affected : { demo, navigation & routes }
+#   Essentially demo and landing have swapped roles...
+#   No significant changes from 4.7
+# ---------------------------------------------------------------------- /
