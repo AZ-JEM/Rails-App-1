@@ -10,7 +10,7 @@ class SimplePagesController < ApplicationController
     @products = Product.limit(10)
   end
 
-  def demo
-  end
+  # def demo
+  # end
 
 end

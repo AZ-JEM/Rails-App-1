@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   # get 'simple_pages/index'
 
-
   # ---------------------------------------------------------------------- /
   # Exercise 5.1
   # ---------------------------------------------------------------------- /
@@ -10,6 +9,7 @@ Rails.application.routes.draw do
   #   Essentially demo and landing have swapped roles...
   #   No significant changes from 4.7
   # ---------------------------------------------------------------------- /
+
   # root 'simple_pages#landing_page'
   root to: redirect('pages/demo.html')
 

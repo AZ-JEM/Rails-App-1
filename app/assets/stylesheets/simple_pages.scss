@@ -8,7 +8,8 @@
 @import "colors";
 // metrics
 $font-pixels: 10px;
-$nav-height: 5rem;
+$nav-height: 7rem;
+$footer-height: 5rem;
 
 // ====================================================================== /
 //  mixins
@@ -64,45 +65,31 @@ body {
 // ====================================================================== /
 //  navigation
 // ====================================================================== /
-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: $color-nav;
-  height: $nav-height;
-  max-height: $nav-height;
+.navbar-inverse {
 
-  // ----------------------------------- /
-  //  columns
-  // ----------------------------------- /
-  @include col-margin;
+  background-color: $color-nav;
+  padding-top: 1rem;
 
-  // ----------------------------------- /
-  //  list items
-  // ----------------------------------- /
-  li.selected {
-    background: #000;
+  .navbar-nav>li>a {
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
   }
 
-  // ----------------------------------- /
-  //  anchors
-  // ----------------------------------- /
-  // a.nav-link {
-  //   color: $color-lo;
-  //
-  //   &:hover {
-  //     color: $color-hi;
-  //   }
-  //
-  //   &:link {
-  //     text-decoration: none;
-  //   }
-  //
-  // }
-}
+  .navbar-brand {
+    font-size: 3.0rem;
+  }
 
-#brand { color: $color-lo; }
+  .navbar-brand,
+  .navbar-text,
+  .navbar-nav>li>a {
+    color: $color-lo;
+    background: $color-nav;
+  }
+
+  .navbar-nav>li.active>a {
+    background-color: #000;
+  }
+}
 
 // ====================================================================== /
 //  views
@@ -151,7 +138,7 @@ footer {
   position: fixed;
   left: 0;
   bottom: 0;
-  height: $nav-height;
+  height: $footer-height;
   width: 100%;
   background: $color-nav;
   color: $color-lo;
