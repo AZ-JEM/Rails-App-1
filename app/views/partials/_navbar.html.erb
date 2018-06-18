@@ -29,31 +29,28 @@
       <ul class="nav navbar-nav navbar-right">
         <!-- home -->
         <li class="<%= 'active' if current_page?(home_path) %>">
-          <!-- <i class="fas fa-home"></i> -->
-          <%= link_to "Home", home_path,
-            title:"Landing page",
-            toggle:"tooltip", "data-placement":"bottom" %>
+          <%= link_to home_path, title:"Landing page", toggle:"tooltip", "data-placement":"bottom" do %>
+            <i class="fas fa-home"></i> Home
+          <% end %>
         </li>
         <!-- products -->
         <li class="<%= 'active' if current_page?(products_path) %>">
-          <!-- <i class="fas fa-cubes"></i> -->
-          <%= link_to "Products", products_path,
-            title:"List all products...",
-            toggle:"tooltip", "data-placement":"bottom" %>
+          <%= link_to products_path, title:"List all products...", toggle:"tooltip", "data-placement":"bottom" do %>
+            <i class="fas fa-cubes"></i> Products
+          <% end %>
         </li>
         <!-- orders -->
         <li class="<%= 'active' if current_page?(orders_path) %>">
-          <!-- <i class="fas fa-shopping-cart"></i> -->
-          <%= link_to "Orders", orders_path,
-            title:"Show orders...",
-            toggle:"tooltip", "data-placement":"bottom" %>
+          <%= link_to orders_path,
+            title:"Show orders...",  toggle:"tooltip", "data-placement":"bottom" do %>
+            <i class="fas fa-shopping-cart"></i> Orders
+          <% end %>
         </li>
         <!-- demo -->
         <li class="<%= 'active' if current_page?(root_path) %>">
-          <!-- <i class="fas fa-clock"></i> -->
-          <%= link_to "Demo", root_path,
-            title:"Running demonstration...",
-            toggle:"tooltip", "data-placement":"bottom" %>
+          <%= link_to root_path, title:"Running demonstration...", toggle:"tooltip", "data-placement":"bottom" do %>
+            <i class="fas fa-clock"></i> Demo
+          <% end %>
         </li>
       </ul>
     </div><!-- /.navbar-collapse -->
