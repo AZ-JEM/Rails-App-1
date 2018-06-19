@@ -20,7 +20,7 @@
           <%= form.text_field :q, id: "q", value: params[:q], class: "form-control", "placeholder": "Search products..." %>
         </div>
         <div class="actions form-group">
-          <%= form.submit "Submit", class: "btn btn-default" %>
+          <%= form.submit "Go", class: "btn btn-default" %>
         </div>
       <% end %>
       <!-- </form> -->
@@ -42,7 +42,7 @@
         <!-- orders -->
         <li class="<%= 'active' if current_page?(orders_path) %>">
           <%= link_to orders_path,
-            title:"Show orders...",  toggle:"tooltip", "data-placement":"bottom" do %>
+            title:"Show orders...", toggle:"tooltip", "data-placement":"bottom" do %>
             <i class="fas fa-shopping-cart"></i> Orders
           <% end %>
         </li>
