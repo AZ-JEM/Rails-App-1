@@ -19,4 +19,9 @@ Rails.application.routes.draw do
   # get '/demo', to: redirect('pages/demo.html')
   get '/home', to: 'simple_pages#landing_page'
 
+  # Exercise 5.3
+  get '/contact', to: 'simple_pages#contact'
+
+  post 'simple_pages/thank_you'
+  
 end
