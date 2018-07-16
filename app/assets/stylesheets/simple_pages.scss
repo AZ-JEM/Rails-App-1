@@ -66,12 +66,20 @@ p {
   color: #000;
 }
 
-.notice,
 .alert {
-  // color: red;
-  margin-top: 1rem;
-  padding-top: 1rem;
-  // border: 1px solid white;
+  margin-top: 1.5rem;
+  padding: 0.25rem 1rem;
+  background: #a00;
+  color: #eee;
+  border: 1px solid white;
+}
+
+.notice {
+  margin-top: 1.5rem;
+  padding: 0.25rem 1rem;
+  background: #0a0;
+  color: #eee;
+  border: 1px solid white;
 }
 
 // ====================================================================== /
