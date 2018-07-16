@@ -62,7 +62,25 @@ body {
   color: $color-text;
 }
 
-p { color: #000; }
+p {
+  color: #000;
+}
+
+.alert {
+  margin-top: 1.5rem;
+  padding: 0.25rem 1rem;
+  background: #a00;
+  color: #eee;
+  border: 1px solid white;
+}
+
+.notice {
+  margin-top: 1.5rem;
+  padding: 0.25rem 1rem;
+  background: #0a0;
+  color: #eee;
+  border: 1px solid white;
+}
 
 // ====================================================================== /
 // icons
