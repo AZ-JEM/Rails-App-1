@@ -62,7 +62,17 @@ body {
   color: $color-text;
 }
 
-p { color: #000; }
+p {
+  color: #000;
+}
+
+.notice,
+.alert {
+  // color: red;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  // border: 1px solid white;
+}
 
 // ====================================================================== /
 // icons

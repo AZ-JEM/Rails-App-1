@@ -28,8 +28,8 @@
       <!-- navigation anchors -->
       <ul class="nav navbar-nav navbar-right">
         <!-- home -->
-        <li class="<%= 'active' if current_page?(home_path) %>">
-          <%= link_to home_path, title:"Landing page", toggle:"tooltip", "data-placement":"bottom" do %>
+        <li class="<%= 'active' if current_page?(root_path) %>">
+          <%= link_to root_path, title:"Landing page", toggle:"tooltip", "data-placement":"bottom" do %>
             <i class="fas fa-home"></i> Home
           <% end %>
         </li>
@@ -47,11 +47,25 @@
           <% end %>
         </li>
         <!-- demo -->
-        <li class="<%= 'active' if current_page?(root_path) %>">
-          <%= link_to root_path, title:"Running demonstration...", toggle:"tooltip", "data-placement":"bottom" do %>
+        <li class="<%= 'active' if current_page?(demo_path) %>">
+          <%= link_to demo_path, title:"Running demonstration...", toggle:"tooltip", "data-placement":"bottom" do %>
             <i class="fas fa-clock"></i> Demo
           <% end %>
         </li>
+        <!-- Authentication : Sign out! -->
+        <% if current_user %>
+          <li>
+            <%= link_to destroy_user_session_path, method: :delete, title:"Sign-out through Devise...", toggle:"tooltip", "data-placement":"bottom" do %>
+              <i class="fas fa-unlock"></i> Sign Out
+            <% end %>
+          </li>
+        <% else %>
+        <li>
+          <%= link_to new_user_session_path, method: :get, title:"Sign-in through Devise...", toggle:"tooltip", "data-placement":"bottom" do %>
+            <i class="fas fa-lock"></i> Sign In
+          <% end %>
+        </li>
+        <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
