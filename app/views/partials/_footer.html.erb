@@ -6,8 +6,12 @@
     </div>
     <div class="col col-md-6 text-right">
       <!-- Authentication -->
-      <span class="notice"><%= notice %></span>
-      <span class="alert"><%= alert %></span>
+      <% if notice %>
+        <span class="notice"><%= notice %></span>
+      <% end %>
+      <% if alert %>
+        <span class="alert"><%= alert %></span>
+      <% end %>
     </div>
   </div>
 </footer>

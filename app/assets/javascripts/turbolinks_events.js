@@ -39,7 +39,12 @@ document.addEventListener('turbolinks:render', function() {
 
 $(document).on('turbolinks:load', function() {
   // enable tooltips :
-  $('[toggle="tooltip"]').tooltip();  // acceptable
+  $('[toggle="tooltip"]').tooltip();
+  // alerts and notices
+  var delay_ms = 5000;
+  var fade_ms = 500;
+  $('.notice').delay(delay_ms).fadeOut(fade_ms);
+  $('.alert').delay(delay_ms).fadeOut(fade_ms);
 });
 
 // document.addEventListener('turbolinks:load', function() {
