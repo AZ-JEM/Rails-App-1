@@ -68,7 +68,7 @@
           </li>
         <% else %>
         <!-- SIGN IN or SIGN UP -->
-        <li>
+        <li class="<%= 'active' if current_page?(new_user_session_path) %>">
           <%= link_to new_user_session_path, method: :get, title:"Sign-in OR Sign-up", toggle:"tooltip", "data-placement":"bottom" do %>
             <i class="fas fa-lock"></i> Sign In
           <% end %>
