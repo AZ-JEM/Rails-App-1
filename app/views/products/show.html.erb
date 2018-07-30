@@ -26,6 +26,17 @@
 </div>
 
 <hr>
+  <!-- Exercise 5.7 -->
+  <p>
+    <% if @product.average_rating %>
+      <strong>Average rating:</strong>
+      <%= number_to_human(@product.average_rating) %>
+    <% else %>
+      <strong>No user ratings yet...</strong>
+    <% end %>
+  </p>
+
+<hr>
 
 <%= link_to 'Edit', edit_product_path(@product), class:"btn btn-md btn-success" %> |
 <%= link_to 'Products', products_path, class:"btn btn-md btn-default" %>

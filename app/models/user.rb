@@ -10,5 +10,8 @@ class User < ApplicationRecord
   validates_presence_of :last_name
 
   has_many :orders
+
+  # Exercise 5.7
+  has_many :comments
   
 end
