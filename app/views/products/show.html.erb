@@ -1,42 +1,54 @@
 <div id="notice"><%= notice %></div>
 
 <h3>Show Product</h3>
+
 <hr>
 
-<div>
-  <p>
-    <strong>Name:</strong>
-    <%= @product.name %>
-  </p>
+<div class="row">
 
-  <p>
-    <strong>Description:</strong>
-    <%= @product.description %>
-  </p>
+  <!-- product image -->
+  <div class="col col-sm-3">
+    <%= image_tag(@product.image_url, class: "img-responsive") %>
+  </div>
 
-  <p>
-    <strong>Image:</strong>
-    <%= image_tag(@product.image_url, class: "img-responsive center-block") %>
-  </p>
+  <!-- product data -->
+  <div class="col col-sm-9">
 
-  <p>
-    <strong>Price:</strong>
-    <%= number_to_currency(@product.price) %>
-  </p>
+    <h3><%= @product.name %></h3>
+
+    <p>
+      <%= @product.description %>
+    </p>
+
+    <p>
+      <strong>Price:</strong>
+      <%= number_to_currency(@product.price) %>
+    </p>
+
+    <p>
+      <% if @product.average_rating %>
+        <em>Average rating:</em>
+        <%= number_to_human(@product.average_rating) %>
+      <% else %>
+        <em>No user ratings yet...</em>
+      <% end %>
+    </p>
+
+    <p>
+      <span class="rated" data-score="<%= @product.average_rating %>"></span>
+    </p>
+
+  </div>
+
 </div>
-
-<hr>
-  <!-- Exercise 5.7 -->
-  <p>
-    <% if @product.average_rating %>
-      <strong>Average rating:</strong>
-      <%= number_to_human(@product.average_rating) %>
-    <% else %>
-      <strong>No user ratings yet...</strong>
-    <% end %>
-  </p>
 
 <hr>
 
 <%= link_to 'Edit', edit_product_path(@product), class:"btn btn-md btn-success" %> |
 <%= link_to 'Products', products_path, class:"btn btn-md btn-default" %>
+
+<hr>
+
+<!-- Exercise 5.8 -->
+<%= render 'new_comment' %>
+<%= render 'comments' %>

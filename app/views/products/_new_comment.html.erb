@@ -1,0 +1,28 @@
+<!-- Exercise 5.8 -->
+<% if signed_in? %>
+
+  <h4>Add a review:</h4>
+
+  <%= form_for([@product, @product.comments.build]) do |f| %>
+
+    <div class="row">
+
+      <!-- labels -->
+      <div class="col col-md-3 text-right">
+        <%= f.label :body, "Comments" %><br>
+        <%= f.label :rating %><br>
+      </div>
+
+      <!-- fields   -->
+      <div class="col col-md-8">
+        <%= f.text_area :body %><br>
+        <span class="rating"></span>
+      </div>
+
+    </div>
+
+    <%= f.submit "Submit review", class: "btn btn-primary" %>
+
+  <% end %>
+
+<% end %>

@@ -2,6 +2,9 @@ class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
   # Authentication
   before_action :authenticate_user!, only: [:edit, :update, :destroy]
+
+  layout "secondary"
+
   # GET /products
   # GET /products.json
   def index
@@ -27,6 +30,9 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
+    @page_title = @product.name
+    # Exercise 5.8
+    @comments = @product.comments.order("created_at DESC")
   end
 
   # GET /products/new
