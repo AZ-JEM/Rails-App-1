@@ -1,7 +1,7 @@
 # ---------------------------------------------------------------------- /
 # Page specific javascript : attempt #1
 # ---------------------------------------------------------------------- /
-$(document).on 'turbolinks:load', ->
+# $(document).on 'turbolinks:load', ->
 # $(document).on 'page:change', ->
 
   # report current scope
@@ -18,7 +18,7 @@ $(document).on 'turbolinks:load', ->
 
   # method 3 (which can utilize 1 or 2)
   # Page class in init.coffee
-  return unless page.controller() == 'simple_pages' && page.action() == 'landing_page'
+  # return unless page.controller() == 'simple_pages' && page.action() == 'landing_page'
 
   # proof we made it...
   # console.log('Arrived at target...');

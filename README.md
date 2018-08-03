@@ -1,3 +1,3 @@
 ---
-"Refuses to commit..."
+Page titles and SEO keywords
 ---

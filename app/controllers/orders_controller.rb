@@ -1,6 +1,8 @@
 class OrdersController < ApplicationController
 
   def index
+    # set title
+    @page_title = "Orders"
     # Exercise 4.6
     # @orders = Order.all
     @orders = Order.includes(:product).all
@@ -9,6 +11,8 @@ class OrdersController < ApplicationController
   def show
     # Exercise 4.6
     @order = Order.find(params[:id])
+    # set title
+    @page_title = @order.product.name
   end
 
   def new

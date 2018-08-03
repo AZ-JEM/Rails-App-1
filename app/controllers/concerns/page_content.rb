@@ -1,4 +1,5 @@
 module PageContent
+
   extend ActiveSupport::Concern
 
   included do
