@@ -52,11 +52,19 @@
   </table>
 </div>
 
-<hr>
+<!--
+<% if current_user %>
+  <%= link_to 'New', new_product_path,
+    class:  "btn btn-default",
+    title:  "Add a new product",
+    toggle: "tooltip",
+    "data-placement": "bottom"
+  %>
+<% end %>
+-->
 
-<%= link_to 'New', new_product_path,
-  class:"btn btn-md btn-default",
-  title:"Add a new product",
-  toggle:"tooltip",
-  "data-placement":"bottom"
-%>
+<div class="row" style="border: 1px solid white; margin: 1rem;">
+  <div class="col col-md-12 text-center">
+    <%= will_paginate @products, renderer: BootstrapPagination::Rails %>
+  </div>
+</div>

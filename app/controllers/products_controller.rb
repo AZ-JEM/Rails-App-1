@@ -25,7 +25,8 @@ class ProductsController < ApplicationController
       end
       # ----------------------------------------------------------------- /
     else
-      @products = Product.all
+      # Pagination
+      @products = Product.all.paginate(page: params[:page], per_page: 5)
     end
   end
 
@@ -35,7 +36,8 @@ class ProductsController < ApplicationController
     # set title
     @page_title = @product.name
     # Exercise 5.8
-    @comments = @product.comments.order("created_at DESC")
+    # add pagination
+    @comments = @product.comments.order("created_at DESC").paginate(page: params[:page], per_page: 3)
   end
 
   # GET /products/new
