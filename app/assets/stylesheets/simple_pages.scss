@@ -58,6 +58,7 @@ body {
   font: 2.0rem/3.0rem Arial, Helvetica, sans-serif;
   // background
   background-image: linear-gradient(to bottom right, $gradient-start, $gradient-end);
+  background-attachment: fixed;
   // default text
   color: $color-text;
 }
@@ -173,6 +174,7 @@ footer {
   background: $color-nav;
   color: $color-lo;
   text-align: center;
+  // suppress bootstrap pagination oddity...
   z-index: 10;
   // ----------------------------------- /
   // columns
@@ -183,6 +185,9 @@ footer {
 
 // ====================================================================== /
 //  Let's get responsive...
+// ---------------------------------------------------------------------- /
+// The new area of interest is : {768 < width < 1306}
+// - at this range the navbar is "stacked"...
 // ====================================================================== /
 @media (min-height: 768px) {
   #view-container {

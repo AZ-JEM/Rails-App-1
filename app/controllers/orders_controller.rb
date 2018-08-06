@@ -1,8 +1,10 @@
 class OrdersController < ApplicationController
 
   # Authentication
+  # user must be present for any action
   before_action :authenticate_user!
   # Authorization
+  # user scoped actions (ability.rb)
   load_and_authorize_resource
 
   def index
