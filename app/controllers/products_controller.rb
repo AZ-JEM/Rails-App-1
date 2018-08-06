@@ -2,7 +2,8 @@ class ProductsController < ApplicationController
 
   before_action :set_product, only: [:show, :edit, :update, :destroy]
   # Authentication
-  before_action :authenticate_user!, only: [:edit, :update, :destroy]
+  # before_action :authenticate_user!, only: [:edit, :update, :destroy]
+  before_action :authenticate_user!
   # Authorization
   load_and_authorize_resource
 
