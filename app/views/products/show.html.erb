@@ -1,8 +1,9 @@
-<h3>Show Product</h3>
+<h3><%= @product.name %></h3>
 
 <hr>
 
-<div class="row">
+<!-- <div class="row" style="margin: 1rem;"> -->
+<div class="row" style="border: 1px solid white; background: #aaa; margin: 1rem; padding: 1rem 0;">
 
   <!-- product image -->
   <div class="col col-sm-3">
@@ -11,8 +12,6 @@
 
   <!-- product data -->
   <div class="col col-sm-9">
-
-    <h3><%= @product.name %></h3>
 
     <p>
       <%= @product.description %>
@@ -24,6 +23,10 @@
     </p>
 
     <p>
+      <span class="rated" data-score="<%= @product.average_rating %>"></span>
+    </p>
+
+    <p>
       <% if @product.average_rating %>
         <em>Average rating:</em>
         <%= number_to_human(@product.average_rating) %>
@@ -32,12 +35,8 @@
       <% end %>
     </p>
 
-    <p>
-      <span class="rated" data-score="<%= @product.average_rating %>"></span>
-    </p>
-
     <% if current_user %>
-      <%= link_to 'Edit', edit_product_path(@product), class:"btn btn-md btn-success" %>
+      <%= link_to 'Edit product...', edit_product_path(@product), class:"btn btn-md btn-success" %>
     <% end %>
 
   </div>

@@ -43,6 +43,12 @@ $(document).on('turbolinks:load', function() {
   //console.log(current_Controller, current_Action);
   // $('title').text(current_Controller + ':' + current_Action);
 
+  // General tinkering...
+  // $('#azjem').text(current_Controller + ' : ' + current_Action);
+  var client_Width = $('body').prop('clientWidth');
+  var client_Height = $('body').prop('clientHeight');
+  $('#azjem').text(client_Width + ' : ' + client_Height);
+
   // enable tooltips :
   $('[toggle="tooltip"]').tooltip();
 
@@ -53,6 +59,9 @@ $(document).on('turbolinks:load', function() {
   $('.alert').delay(delay_ms).fadeOut(fade_ms);
 
   // Exercise 5.8
+  // Ruby embedded in Javascript!!!
+  // ...ozone is emanating from my ears...
+  // (it even has it's own file icon)
   if ((current_Controller == 'products') && (current_Action == 'show')) {
     $('.rating').raty({
       starHalf: '<%= asset_path "star-half.png" %>',

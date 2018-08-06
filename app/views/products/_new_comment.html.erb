@@ -1,7 +1,8 @@
 <!-- Exercise 5.8 -->
+<div class="comment_form" style="margin: 1rem; border: 1px solid white; padding: 1rem;">
+
 <% if signed_in? %>
 
-  <hr>
   <h3><em>Add a review:</em></h3>
 
   <%= form_for([@product, @product.comments.build]) do |f| %>
@@ -29,3 +30,5 @@
   <% end %>
 
 <% end %>
+
+</div>
