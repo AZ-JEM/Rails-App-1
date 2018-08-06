@@ -4,7 +4,7 @@ class ProductsController < ApplicationController
   # Authentication
   before_action :authenticate_user!, only: [:edit, :update, :destroy]
   # Authorization
-  before_action :load_and_authorize_resource, only: [:edit, :update, :destroy]
+  # before_action load_and_authorize_resource, only: [:edit, :update, :destroy]
 
   # Allowances for Exercise 5.8
   layout "secondary"
@@ -42,9 +42,11 @@ class ProductsController < ApplicationController
     @comments = @product.comments.order("created_at DESC").paginate(page: params[:page], per_page: 3)
   end
 
-  # Authorization
-  # Heroku attempt 2
-  # load_and_authorize_resource
+  # Authorization ---------------------------------------- /
+  # a - Heroku fails with this leading block
+  # b - incompatible with before_action
+  # c - this "imperative" solution just works...
+  load_and_authorize_resource
 
   # GET /products/new
   def new

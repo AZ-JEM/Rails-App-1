@@ -1,11 +1,13 @@
-// Retrieve controller and action from layout...
+// ====================================================================== /
+// Globals
+// ====================================================================== /
 var current_Controller;
 var current_Action;
 
 // ====================================================================== /
 //  Turbolinks 5 event structure (chronological)
 // ====================================================================== /
-/*
+
 document.addEventListener('turbolinks:click', function() {
   // console.log('*click');
 });
@@ -37,15 +39,12 @@ document.addEventListener('turbolinks:before-render', function() {
 document.addEventListener('turbolinks:render', function() {
   // console.log('*render');
 });
-*/
 
 $(document).on('turbolinks:load', function() {
 
-  // Retrieve controller and action from layout...
-  current_Controller = $('body').data('controller');
-  current_Action = $('body').data('action');
-
-  jemSpy();
+  // determine precisely where we are at the moment...
+  getControllerAction();
+  // jemSpy('load');
 
   // enable tooltips :
   $('[toggle="tooltip"]').tooltip();
@@ -58,7 +57,7 @@ $(document).on('turbolinks:load', function() {
 
   // Exercise 5.8
   // Ruby embedded in Javascript!!!
-  // why can't I retrieve controller_name and action_name like this ?
+  // why can't I retrieve controller_name and action_name directly like this ?
   if ((current_Controller == 'products') && (current_Action == 'show')) {
     $('.rating').raty({
       starHalf: '<%= asset_path "star-half.png" %>',
@@ -80,17 +79,31 @@ $(document).on('turbolinks:load', function() {
 
 });
 
-function jemSpy() {
+// ====================================================================== /
+// Retrieve controller and action from layout...
+// ====================================================================== /
+function getControllerAction() {
 
-  // var current_Action = '<%=  %>';
-  //console.log(current_Controller, current_Action);
-  // $('title').text(current_Controller + ':' + current_Action);
+  current_Controller = $('body').data('controller');
+  current_Action = $('body').data('action');
 
-  // General tinkering...
-  $('#azjem').text(current_Controller + ' : ' + current_Action);
+}
+
+// ====================================================================== /
+// General tinkering...
+// ====================================================================== /
+function jemSpy(prefix) {
+
+  // $('#azjem').text(current_Controller + ' : ' + current_Action);
+
   // var client_Width = $('body').prop('clientWidth');
   // var client_Height = $('body').prop('clientHeight');
-  // $('#azjem').text(client_Width + ' : ' + client_Height);
+  // var msg = prefix + ' - ' + client_Width + ' : ' + client_Height;
+
+  var msg = prefix + ' - ' + current_Controller + ' : ' + current_Action;
+  console.log(msg);
+  // $('#azjem').text(msg);
+
   // $('#azjem').text($('body').prop('baseURI'));
 
 }
