@@ -52,8 +52,11 @@ $(document).on('turbolinks:load', function() {
   // alerts and notices
   var delay_ms = 5000;
   var fade_ms = 500;
+  // fade out alerts or notices...
   $('.notice').delay(delay_ms).fadeOut(fade_ms);
   $('.alert').delay(delay_ms).fadeOut(fade_ms);
+  // fade in branding...
+  $('#azjem').delay(delay_ms + fade_ms).fadeIn(fade_ms);
 
   // Exercise 5.8
   // Ruby embedded in Javascript!!!

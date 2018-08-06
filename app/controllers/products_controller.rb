@@ -3,8 +3,6 @@ class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
   # Authentication
   before_action :authenticate_user!, only: [:edit, :update, :destroy]
-  # Authorization
-  # before_action load_and_authorize_resource, only: [:edit, :update, :destroy]
 
   # Allowances for Exercise 5.8
   layout "secondary"
@@ -21,15 +19,19 @@ class ProductsController < ApplicationController
       # Equalize Dev / Prod query behavior
       # ----------------------------------------------------------------- /
       if Rails.env.production?
-        @products = Product.where("name ILIKE ?", "%#{search_term}%")
+        # Postgres
+        record_set = Product.where("name ILIKE ?", "%#{search_term}%")
       else
-        @products = Product.where("name LIKE ?", "%#{search_term}%")
+        # SQLite
+        record_set = Product.where("name LIKE ?", "%#{search_term}%")
       end
       # ----------------------------------------------------------------- /
     else
       # Pagination
-      @products = Product.all.paginate(page: params[:page], per_page: 5)
+      record_set = Product.all
     end
+    # paginate records
+    @products = record_set.paginate(page: params[:page], per_page: 5)
   end
 
   # GET /products/1

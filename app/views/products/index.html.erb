@@ -66,8 +66,11 @@
 <% end %>
 -->
 
-<div class="row" style="border: 1px solid white; margin: 1rem;">
-  <div class="col col-md-12 text-center">
-    <%= will_paginate @products, renderer: BootstrapPagination::Rails %>
+<!-- TODO: remove constant -->
+<% if @products.count > 5  %>
+  <div class="row" style="border: 1px solid white; margin: 1rem;">
+    <div class="col col-md-12 text-center">
+      <%= will_paginate @products, renderer: BootstrapPagination::Rails %>
+    </div>
   </div>
-</div>
+<% end %>

@@ -1,16 +1,20 @@
 <!-- begin footer -->
 <footer class="container-fluid text-center">
   <div class="row">
-    <div id="azjem" class="col col-md-6 text-left">
-      &copy; 2018 AZ-JEM
-    </div>
-    <div class="col col-md-6 text-right">
-      <!-- Authentication -->
+    <div class="col col-xs-12">
+      <!-- Notice -->
       <% if notice %>
         <span class="notice"><%= notice %></span>
       <% end %>
+      <!-- Alert -->
       <% if alert %>
         <span class="alert"><%= alert %></span>
+      <% end %>
+      <!-- Branding -->
+      <% if !alert && !notice %>
+        <span id="azjem"> &copy; 2018 AZ-JEM </span>
+      <% else %>
+        <span id="azjem" style="display: none"> &copy; 2018 AZ-JEM </span>
       <% end %>
     </div>
   </div>
