@@ -3,6 +3,8 @@ class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
   # Authentication
   before_action :authenticate_user!, only: [:edit, :update, :destroy]
+  # Authorization
+  load_and_authorize_resource
 
   # Allowances for Exercise 5.8
   layout "secondary"

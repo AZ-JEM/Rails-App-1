@@ -1,5 +1,10 @@
 class OrdersController < ApplicationController
 
+  # Authentication
+  before_action :authenticate_user!
+  # Authorization
+  load_and_authorize_resource
+
   def index
     # set title
     @page_title = "Orders"

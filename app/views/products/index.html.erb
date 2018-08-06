@@ -33,19 +33,23 @@
               class:"btn btn-info"
             %>
           </td>
-          <td>
-            <!-- <i class="fas fa-pencil-alt"></i> -->
-            <%= link_to 'Edit', edit_product_path(product),
-              class:"btn btn-success"
-            %>
-          </td>
-          <td>
-            <!-- <i class="fas fa-trash"></i> -->
-            <%= link_to 'X', product,
-              method: :delete, data: { confirm: 'Are you sure?' },
-              class:"btn btn-danger"
-            %>
-          </td>
+          <!-- administrative links -->
+          <% if current_user.admin %>
+            <td>
+              <!-- <i class="fas fa-pencil-alt"></i> -->
+              <%= link_to 'Edit', edit_product_path(product),
+                class:"btn btn-success"
+              %>
+            </td>
+            <td>
+              <!-- <i class="fas fa-trash"></i> -->
+              <%= link_to 'X', product,
+                method: :delete, data: { confirm: 'Are you sure?' },
+                class:"btn btn-danger"
+              %>
+            </td>
+          <% end %>
+
         </tr>
       <% end %>
     </tbody>

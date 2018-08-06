@@ -7,7 +7,17 @@
         <p><%= comment.user.first_name %> <small><em><%= "#{time_ago_in_words(comment.created_at)} ago" %></em></small></p>
         <p><%= "Rating: #{comment.rating} of 5" %></p>
         <p><%= comment.body %></p>
-        <span class="rated" data-score="<%= comment.rating %>"></span>
+        <!-- admin deletion link -->
+        <p class="rated" data-score="<%= comment.rating %>"></p>
+        <% if signed_in? && current_user.admin? %>
+          <%= link_to 'X',
+              product_comment_path(comment.product, comment),
+              method: :delete,
+              class: "btn btn-md btn-danger",
+              data: { confirm: 'Are you sure?' }
+          %>
+        <% end %>
+
       </div>
     </div>
   <% end %>
