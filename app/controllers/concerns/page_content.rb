@@ -3,10 +3,10 @@ module PageContent
   extend ActiveSupport::Concern
 
   included do
-    before_action :set_title
+    before_action :set_content
   end
 
-  def set_title
+  def set_content
     @page_title = "Polar Clock Shop"
     @seo_keywords = "AZ-JEM"
   end
