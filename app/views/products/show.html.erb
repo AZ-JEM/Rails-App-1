@@ -35,7 +35,7 @@
       <% end %>
     </p>
 
-    <% if current_user.admin %>
+    <% if signed_in? && current_user.admin? %>
       <%= link_to 'Edit product...', edit_product_path(@product), class:"btn btn-md btn-success" %>
     <% end %>
 
