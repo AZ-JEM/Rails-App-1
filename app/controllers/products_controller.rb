@@ -2,10 +2,7 @@ class ProductsController < ApplicationController
 
   before_action :set_product, only: [:show, :edit, :update, :destroy]
   # Authentication
-  # before_action :authenticate_user!, only: [:edit, :update, :destroy]
-  before_action :authenticate_user!
-  # Authorization
-  load_and_authorize_resource
+  before_action :authenticate_user!, only: [:edit, :update, :destroy]
 
   # Allowances for Exercise 5.8
   layout "secondary"
@@ -42,6 +39,10 @@ class ProductsController < ApplicationController
     # add pagination
     @comments = @product.comments.order("created_at DESC").paginate(page: params[:page], per_page: 3)
   end
+
+  # Authorization
+  # Heroku attempt 2
+  load_and_authorize_resource
 
   # GET /products/new
   def new
