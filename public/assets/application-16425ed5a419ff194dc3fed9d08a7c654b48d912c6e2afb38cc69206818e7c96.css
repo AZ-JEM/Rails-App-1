@@ -1,0 +1,311 @@
+.cancel-on-png, .cancel-off-png, .star-on-png, .star-off-png, .star-half-png {
+  font-size: 2em;
+}
+
+@font-face {
+  font-family: "raty";
+  font-style: normal;
+  font-weight: normal;
+  src: url("./fonts/raty.eot");
+  src: url("./fonts/raty.eot?#iefix") format("embedded-opentype");
+  src: url("./fonts/raty.svg#raty") format("svg");
+  src: url("./fonts/raty.ttf") format("truetype");
+  src: url("./fonts/raty.woff") format("woff");
+}
+
+.cancel-on-png, .cancel-off-png, .star-on-png, .star-off-png, .star-half-png {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: "raty";
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  line-height: 1;
+  speak: none;
+  text-transform: none;
+}
+
+.cancel-on-png:before {
+  content: "\e600";
+}
+
+.cancel-off-png:before {
+  content: "\e601";
+}
+
+.star-on-png:before {
+  content: "\f005";
+}
+
+.star-off-png:before {
+  content: "\f006";
+}
+
+.star-half-png:before {
+  content: "\f123";
+}
+/* line 6, /home/jem/Documents/Projects/WebDev/rails/rails_app_1/app/assets/stylesheets/products.scss */
+#error_explanation li {
+  color: #000;
+}
+/* line 4, /home/jem/Documents/Projects/WebDev/rails/rails_app_1/app/assets/stylesheets/scaffolds.scss */
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+/* line 13, /home/jem/Documents/Projects/WebDev/rails/rails_app_1/app/assets/stylesheets/scaffolds.scss */
+a.nav-link {
+  color: #f6a326;
+}
+/* line 16, /home/jem/Documents/Projects/WebDev/rails/rails_app_1/app/assets/stylesheets/scaffolds.scss */
+a.nav-link:hover {
+  color: #faf706;
+}
+/* line 20, /home/jem/Documents/Projects/WebDev/rails/rails_app_1/app/assets/stylesheets/scaffolds.scss */
+a.nav-link:link {
+  text-decoration: none;
+}
+
+/* line 26, /home/jem/Documents/Projects/WebDev/rails/rails_app_1/app/assets/stylesheets/scaffolds.scss */
+th {
+  padding-bottom: 5px;
+  background: #aaa;
+  color: #000;
+}
+
+/* line 32, /home/jem/Documents/Projects/WebDev/rails/rails_app_1/app/assets/stylesheets/scaffolds.scss */
+td {
+  padding: 0 5px 7px;
+}
+
+/* line 37, /home/jem/Documents/Projects/WebDev/rails/rails_app_1/app/assets/stylesheets/scaffolds.scss */
+div.field, div.actions {
+  margin-bottom: 10px;
+}
+
+/* line 42, /home/jem/Documents/Projects/WebDev/rails/rails_app_1/app/assets/stylesheets/scaffolds.scss */
+#notice {
+  text-align: center;
+  background: green;
+}
+
+/* line 48, /home/jem/Documents/Projects/WebDev/rails/rails_app_1/app/assets/stylesheets/scaffolds.scss */
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+/* line 54, /home/jem/Documents/Projects/WebDev/rails/rails_app_1/app/assets/stylesheets/scaffolds.scss */
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px 7px 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+/* line 61, /home/jem/Documents/Projects/WebDev/rails/rails_app_1/app/assets/stylesheets/scaffolds.scss */
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px -7px 0;
+  background-color: #c00;
+  color: #fff;
+}
+/* line 71, /home/jem/Documents/Projects/WebDev/rails/rails_app_1/app/assets/stylesheets/scaffolds.scss */
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+
+/* line 77, /home/jem/Documents/Projects/WebDev/rails/rails_app_1/app/assets/stylesheets/scaffolds.scss */
+label {
+  display: block;
+}
+
+/* line 82, /home/jem/Documents/Projects/WebDev/rails/rails_app_1/app/assets/stylesheets/scaffolds.scss */
+button, input, select, textarea {
+  color: #000;
+}
+@keyframes view-enter {
+  from {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+/* line 38, /home/jem/Documents/Projects/WebDev/rails/rails_app_1/app/assets/stylesheets/simple_pages.scss */
+.enter {
+  animation: 750ms ease view-enter;
+}
+
+/* line 45, /home/jem/Documents/Projects/WebDev/rails/rails_app_1/app/assets/stylesheets/simple_pages.scss */
+html {
+  font-size: 10px;
+  height: 100%;
+  width: 100%;
+}
+
+/* line 56, /home/jem/Documents/Projects/WebDev/rails/rails_app_1/app/assets/stylesheets/simple_pages.scss */
+body {
+  font: 2.0rem/3.0rem Arial, Helvetica, sans-serif;
+  background-image: linear-gradient(to bottom right, rgba(0, 0, 255, 0.3333333333), rgba(0, 255, 0, 0.3333333333));
+  background-attachment: fixed;
+  color: #eee;
+}
+
+/* line 66, /home/jem/Documents/Projects/WebDev/rails/rails_app_1/app/assets/stylesheets/simple_pages.scss */
+p {
+  color: #000;
+}
+
+/* line 73, /home/jem/Documents/Projects/WebDev/rails/rails_app_1/app/assets/stylesheets/simple_pages.scss */
+.alert {
+  margin-top: 1.5rem;
+  padding: 0.25rem 1rem;
+  background: #a00;
+  color: #eee;
+  border: 1px solid white;
+}
+
+/* line 81, /home/jem/Documents/Projects/WebDev/rails/rails_app_1/app/assets/stylesheets/simple_pages.scss */
+.notice {
+  margin-top: 1.5rem;
+  padding: 0.25rem 1rem;
+  background: #0a0;
+  color: #eee;
+  border: 1px solid white;
+}
+
+/* line 92, /home/jem/Documents/Projects/WebDev/rails/rails_app_1/app/assets/stylesheets/simple_pages.scss */
+i {
+  color: #eee;
+}
+
+/* line 99, /home/jem/Documents/Projects/WebDev/rails/rails_app_1/app/assets/stylesheets/simple_pages.scss */
+.navbar-inverse {
+  background-color: #555;
+  padding-top: 1rem;
+}
+/* line 104, /home/jem/Documents/Projects/WebDev/rails/rails_app_1/app/assets/stylesheets/simple_pages.scss */
+.navbar-inverse .navbar-nav > li > a {
+  padding: 0.5rem 1rem;
+  margin: 1rem 0 0 1rem;
+}
+/* line 109, /home/jem/Documents/Projects/WebDev/rails/rails_app_1/app/assets/stylesheets/simple_pages.scss */
+.navbar-inverse .navbar-brand {
+  font-size: 3.0rem;
+}
+/* line 113, /home/jem/Documents/Projects/WebDev/rails/rails_app_1/app/assets/stylesheets/simple_pages.scss */
+.navbar-inverse .navbar-brand,
+.navbar-inverse .navbar-text,
+.navbar-inverse .navbar-nav > li > a {
+  color: #f6a326;
+  background: #555;
+}
+/* line 120, /home/jem/Documents/Projects/WebDev/rails/rails_app_1/app/assets/stylesheets/simple_pages.scss */
+.navbar-inverse .navbar-nav > li.active > a {
+  background-color: #000;
+}
+
+/* line 132, /home/jem/Documents/Projects/WebDev/rails/rails_app_1/app/assets/stylesheets/simple_pages.scss */
+#view-container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: -1;
+}
+
+/* line 145, /home/jem/Documents/Projects/WebDev/rails/rails_app_1/app/assets/stylesheets/simple_pages.scss */
+#view-div {
+  position: relative;
+  margin: 8.75rem 5%;
+  padding: 2rem;
+  background: rgba(85, 85, 85, 0.6666666667);
+  border: 1px solid black;
+  border-radius: 2rem;
+  box-shadow: 1rem 1rem 0.75rem 0.5rem rgba(85, 85, 85, 0.2);
+}
+
+/* line 157, /home/jem/Documents/Projects/WebDev/rails/rails_app_1/app/assets/stylesheets/simple_pages.scss */
+#carousel-example-generic img {
+  margin-top: 3rem;
+}
+/* line 160, /home/jem/Documents/Projects/WebDev/rails/rails_app_1/app/assets/stylesheets/simple_pages.scss */
+#carousel-example-generic h3 {
+  margin-top: 3rem;
+}
+
+/* line 168, /home/jem/Documents/Projects/WebDev/rails/rails_app_1/app/assets/stylesheets/simple_pages.scss */
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 5rem;
+  width: 100%;
+  background: #555;
+  color: #f6a326;
+  text-align: center;
+  z-index: 10;
+}
+/* line 19, /home/jem/Documents/Projects/WebDev/rails/rails_app_1/app/assets/stylesheets/simple_pages.scss */
+footer .col {
+  margin-top: 1rem;
+}
+
+/* line 200, /home/jem/Documents/Projects/WebDev/rails/rails_app_1/app/assets/stylesheets/simple_pages.scss */
+main {
+  margin: 80px auto 100px auto;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1306px), screen and (max-width: 350px) {
+  /* line 205, /home/jem/Documents/Projects/WebDev/rails/rails_app_1/app/assets/stylesheets/simple_pages.scss */
+  main {
+    margin: 120px auto 100px auto;
+  }
+}
+@media screen and (max-width: 350px) {
+  /* line 212, /home/jem/Documents/Projects/WebDev/rails/rails_app_1/app/assets/stylesheets/simple_pages.scss */
+  main {
+    margin: 130px auto 100px auto;
+  }
+}
+@media (min-height: 625px) {
+  /* line 222, /home/jem/Documents/Projects/WebDev/rails/rails_app_1/app/assets/stylesheets/simple_pages.scss */
+  #view-container {
+    margin: 0;
+  }
+
+  /* line 226, /home/jem/Documents/Projects/WebDev/rails/rails_app_1/app/assets/stylesheets/simple_pages.scss */
+  #view-div {
+    margin: 0 10%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+
+*/
+
