@@ -144,7 +144,7 @@ i {
 // ----------------------------------- /
 #view-div {
   position: relative;
-  margin: $nav-height*1.25 10%;
+  margin: $nav-height*1.25 5%;
   padding: 2rem;
   background: rgba($color-nav, 2/3);
   border: 1px solid black;
@@ -187,9 +187,31 @@ footer {
 //  Let's get responsive...
 // ---------------------------------------------------------------------- /
 // The new area of interest is : {768 < width < 1306}
-// - at this range the navbar is "stacked"...
+// - at this range the navbar is "stacked"... (~110px)
 // ====================================================================== /
-@media (min-height: 768px) {
+// Default : normal navbar is ~70px
+main {
+  margin: 80px auto 100px auto;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1306px), screen and (max-width: 350px) {
+  main {
+    margin: 120px auto 100px auto;
+  }
+}
+
+// very narrow displays cause stacking of hamburger and branding (~120px)...
+@media screen and (max-width: 350px) {
+  main {
+    margin: 130px auto 100px auto;
+  }
+}
+
+// navbar 71px .. 111px (stacked)
+// carousel 460px
+// footer 50px
+// sum = 621px
+@media (min-height: 625px) {
   #view-container {
     margin: 0;
   }

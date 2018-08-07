@@ -1,5 +1,9 @@
-<!-- Exercise 4.4 -->
-<!-- carousel -->
+<h3>
+  <strong>
+    <em>Home</em>
+  </strong>
+</h3>
+<hr>
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
@@ -15,7 +19,7 @@
         <%=
           link_to image_tag(product.image_url,
           class: "img-responsive center-block"),
-          {controller: 'products', action: 'show', id: product.id} 
+          {controller: 'products', action: 'show', id: product.id}
         %>
         <br><br><br>
         <div class="carousel-caption">

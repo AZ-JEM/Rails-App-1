@@ -37,9 +37,12 @@
       <%= render 'partials/navbar' %>
     </header>
 
-    <!-- naked -->
-    <main class="container enter" style="background: #777; margin: 100px auto; padding-bottom: 1em">
-      <%= yield %>
+    <main id="view-container" class="enter">
+
+      <div id="view-div">
+        <%= yield %>
+      </div>
+
     </main>
 
     <footer>

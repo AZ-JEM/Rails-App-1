@@ -1,3 +1,3 @@
 ---
-Exercise 5.10
+Simplified responsive layout
 ---

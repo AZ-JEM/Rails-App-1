@@ -4,9 +4,6 @@ class ProductsController < ApplicationController
   # Authentication
   before_action :authenticate_user!, only: [:edit, :update, :destroy]
 
-  # Allowances for Exercise 5.8
-  layout "secondary"
-
   # GET /products
   # GET /products.json
   def index

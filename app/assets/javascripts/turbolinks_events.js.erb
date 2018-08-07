@@ -7,44 +7,54 @@ var current_Action;
 // ====================================================================== /
 //  Turbolinks 5 event structure (chronological)
 // ====================================================================== /
-
+/*
+// 1
 document.addEventListener('turbolinks:click', function() {
   // console.log('*click');
 });
 
+// 2
 document.addEventListener('turbolinks:before-visit', function() {
   // console.log('*before-visit');
 });
 
+// 3
 document.addEventListener('turbolinks:visit', function() {
   // console.log('*visit');
 });
 
+// 4
 document.addEventListener('turbolinks:request-start', function() {
   // console.log('*request-start');
 });
 
+// 5
 document.addEventListener('turbolinks:request-end', function() {
   // console.log('*request-end');
 });
 
+// 6
 document.addEventListener('turbolinks:before-cache', function() {
   // console.log('*before-cache');
 });
 
+// 7
 document.addEventListener('turbolinks:before-render', function() {
   // console.log('*before-render');
 });
 
+// 8
 document.addEventListener('turbolinks:render', function() {
   // console.log('*render');
 });
+*/
 
+// 9 : Document Loaded...
 $(document).on('turbolinks:load', function() {
 
   // determine precisely where we are at the moment...
   getControllerAction();
-  // jemSpy('load');
+  // jemSpy('#view-div');
 
   // enable tooltips :
   $('[toggle="tooltip"]').tooltip();
@@ -90,22 +100,27 @@ function getControllerAction() {
   current_Controller = $('body').data('controller');
   current_Action = $('body').data('action');
 
+  // var msg = current_Controller + ' : ' + current_Action;
+  // console.log(msg);
+
 }
 
 // ====================================================================== /
 // General tinkering...
 // ====================================================================== /
-function jemSpy(prefix) {
+function jemSpy(target) {
+
+  var client_Width = $(target)[0].clientWidth;
+  var client_Height = $(target)[0].clientHeight;
+  var msg = target + ' - ' + client_Width + ' : ' + client_Height;
+  $('#azjem').text(msg);
+
+  // var client_Width = $('.view-div').prop('clientWidth');
+  // var client_Height = $('.view-div').prop('clientHeight');
 
   // $('#azjem').text(current_Controller + ' : ' + current_Action);
-
-  // var client_Width = $('body').prop('clientWidth');
-  // var client_Height = $('body').prop('clientHeight');
-  // var msg = prefix + ' - ' + client_Width + ' : ' + client_Height;
-
-  var msg = prefix + ' - ' + current_Controller + ' : ' + current_Action;
-  console.log(msg);
-  // $('#azjem').text(msg);
+  // var msg = prefix + ' - ' + current_Controller + ' : ' + current_Action;
+  // console.log(msg);
 
   // $('#azjem').text($('body').prop('baseURI'));
 
