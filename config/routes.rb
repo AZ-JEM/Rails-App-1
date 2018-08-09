@@ -8,24 +8,18 @@ Rails.application.routes.draw do
   root 'simple_pages#landing_page'
   # root to: redirect('pages/demo.html')
 
-  # ---------------------------------------------------------------------- /
-  # Exercise 5.8
-  # ---------------------------------------------------------------------- /
   resources :products do
     resources :comments
   end
-  # ---------------------------------------------------------------------- /
 
   resources :orders, only: [:index, :show, :create, :destroy]
 
   get '/demo', to: redirect('pages/demo.html')
   # get '/home', to: 'simple_pages#landing_page'
 
-  # ---------------------------------------------------------------------- /
-  # Exercise 5.3
-  # ---------------------------------------------------------------------- /
   get '/contact', to: 'simple_pages#contact'
-  # ---------------------------------------------------------------------- /
+
+  get '/table', to: 'products#table'
 
   post 'simple_pages/thank_you'
 

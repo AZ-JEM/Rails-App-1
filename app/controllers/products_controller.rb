@@ -4,6 +4,10 @@ class ProductsController < ApplicationController
   # Authentication
   before_action :authenticate_user!, only: [:edit, :update, :destroy]
 
+  def table
+    @products = Product.all.paginate(page: params[:page], per_page: 6)
+  end
+
   # GET /products
   # GET /products.json
   def index
@@ -28,7 +32,7 @@ class ProductsController < ApplicationController
       record_set = Product.all
     end
     # paginate records
-    @products = record_set.paginate(page: params[:page], per_page: 5)
+    @products = record_set.paginate(page: params[:page], per_page: 6)
   end
 
   # GET /products/1

@@ -196,21 +196,23 @@ footer {
 // The new area of interest is : {768 < width < 1306}
 // - at this range the navbar is "stacked"... (~110px)
 // ====================================================================== /
-// Default : normal navbar is ~70px
+// Default : {single line large or single line hamburger}
 main {
-  margin: 80px auto 100px auto;
+  margin: 80px auto 60px auto;
 }
 
+// mid-way stacking of Branding, Search...
+// ...Navigation links
 @media screen and (min-width: 768px) and (max-width: 1306px), screen and (max-width: 350px) {
   main {
-    margin: 120px auto 100px auto;
+    margin: 120px auto 60px auto;
   }
 }
 
 // very narrow displays cause stacking of hamburger and branding (~120px)...
 @media screen and (max-width: 350px) {
   main {
-    margin: 130px auto 100px auto;
+    margin: 130px auto 60px auto;
   }
 }
 

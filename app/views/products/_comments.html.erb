@@ -25,7 +25,7 @@
 
     <!-- TODO : remove constant 3 -->
     <% if @comments.count > 3 %>
-      <div class="row" style="border: 1px solid white; margin: 1rem;">
+      <div class="row">
         <div class="col col-md-12 text-center">
           <%= will_paginate @comments, renderer: BootstrapPagination::Rails %>
         </div>
