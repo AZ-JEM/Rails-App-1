@@ -1,3 +1,3 @@
 ---
-Simplified responsive layout
+User registration confirmation
 ---

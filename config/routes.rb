@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # get 'simple_pages/index'
 
   # Authentication
-  devise_for :users
+  devise_for :users, controllers: { registrations: "user_registrations" }
 
   root 'simple_pages#landing_page'
   # root to: redirect('pages/demo.html')
