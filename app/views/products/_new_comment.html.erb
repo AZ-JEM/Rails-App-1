@@ -2,7 +2,7 @@
 
 <% if signed_in? %>
 
-  <div class="comment_form" style="margin: 1rem; border: 1px solid white; padding: 1rem;">
+  <div class="comment-form">
   <h3><em>Add a review:</em></h3>
 
   <%= form_for([@product, @product.comments.build]) do |f| %>

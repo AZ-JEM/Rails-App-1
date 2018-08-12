@@ -55,8 +55,7 @@
   </table>
 </div>
 
-<!--
-<% if current_user %>
+<% if signed_in? && current_user.admin? %>
   <%= link_to 'New', new_product_path,
     class:  "btn btn-default",
     title:  "Add a new product",
@@ -64,11 +63,11 @@
     "data-placement": "bottom"
   %>
 <% end %>
--->
 
-<!-- TODO: remove constant -->
-<% if @products.count > 6  %>
-  <div class="row" style="border: 1px solid white; margin: 1rem;">
+
+<% if @products.count > @table_pagination %>
+  <hr>
+  <div class="row">
     <div class="col col-md-12 text-center">
       <%= will_paginate @products, renderer: BootstrapPagination::Rails %>
     </div>

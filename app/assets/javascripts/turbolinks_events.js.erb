@@ -4,6 +4,84 @@
 var current_Controller;
 var current_Action;
 
+$(document).on('turbolinks:load', function() {
+
+  // determine precisely where we are at the moment...
+  getControllerAction(false);
+  // jemSpy('#view-div');
+
+  // enable tooltips :
+  $('[toggle="tooltip"]').tooltip();
+
+  // alerts and notices
+  var delay_ms = 5000;
+  var fade_ms = 500;
+  // fade out alerts or notices...
+  $('.notice').delay(delay_ms).fadeOut(fade_ms);
+  $('.alert').delay(delay_ms).fadeOut(fade_ms);
+  // fade in branding...
+  $('#azjem').delay(delay_ms + fade_ms).fadeIn(fade_ms);
+
+  // Exercise 5.8
+  // Ruby embedded in Javascript!!!
+  // why can't I retrieve controller_name and action_name directly like this ?
+  if ((current_Controller == 'products') && (current_Action == 'show')) {
+    $('.rating').raty({
+      starHalf: '<%= asset_path "star-half.png" %>',
+      starOff: '<%= asset_path "star-off.png" %>',
+      starOn: '<%= asset_path "star-on.png" %>',
+      scoreName: 'comment[rating]'
+    });
+
+    $('.rated').raty({
+      starHalf: '<%= asset_path "star-half.png" %>',
+      starOff: '<%= asset_path "star-off.png" %>',
+      starOn: '<%= asset_path "star-on.png" %>',
+      readOnly: true,
+      score: function() {
+        return $(this).attr('data-score');
+      }
+    });
+  }
+
+});
+
+// ====================================================================== /
+// Retrieve controller and action from layout...
+// ====================================================================== /
+function getControllerAction(track) {
+
+  current_Controller = $('body').data('controller');
+  current_Action = $('body').data('action');
+
+  if (track) {
+    var msg = current_Controller + ' : ' + current_Action;
+    console.log(msg);
+  }
+
+}
+
+// ====================================================================== /
+// General tinkering...
+// ====================================================================== /
+function jemSpy(target) {
+
+  var client_Width = $(target)[0].clientWidth;
+  var client_Height = $(target)[0].clientHeight;
+  var msg = target + ' - ' + client_Width + ' : ' + client_Height;
+  $('#azjem').text(msg);
+
+  // var client_Width = $('.view-div').prop('clientWidth');
+  // var client_Height = $('.view-div').prop('clientHeight');
+
+  // $('#azjem').text(current_Controller + ' : ' + current_Action);
+  // var msg = prefix + ' - ' + current_Controller + ' : ' + current_Action;
+  // console.log(msg);
+
+  // $('#azjem').text($('body').prop('baseURI'));
+
+}
+
 // ====================================================================== /
 //  Turbolinks 5 event structure (chronological)
 // ====================================================================== /
@@ -50,78 +128,3 @@ document.addEventListener('turbolinks:render', function() {
 */
 
 // 9 : Document Loaded...
-$(document).on('turbolinks:load', function() {
-
-  // determine precisely where we are at the moment...
-  getControllerAction();
-  // jemSpy('#view-div');
-
-  // enable tooltips :
-  $('[toggle="tooltip"]').tooltip();
-
-  // alerts and notices
-  var delay_ms = 5000;
-  var fade_ms = 500;
-  // fade out alerts or notices...
-  $('.notice').delay(delay_ms).fadeOut(fade_ms);
-  $('.alert').delay(delay_ms).fadeOut(fade_ms);
-  // fade in branding...
-  $('#azjem').delay(delay_ms + fade_ms).fadeIn(fade_ms);
-
-  // Exercise 5.8
-  // Ruby embedded in Javascript!!!
-  // why can't I retrieve controller_name and action_name directly like this ?
-  if ((current_Controller == 'products') && (current_Action == 'show')) {
-    $('.rating').raty({
-      starHalf: '<%= asset_path "star-half.png" %>',
-      starOff: '<%= asset_path "star-off.png" %>',
-      starOn: '<%= asset_path "star-on.png" %>',
-      scoreName: 'comment[rating]'
-    });
-
-    $('.rated').raty({
-      starHalf: '<%= asset_path "star-half.png" %>',
-      starOff: '<%= asset_path "star-off.png" %>',
-      starOn: '<%= asset_path "star-on.png" %>',
-      readOnly: true,
-      score: function() {
-        return $(this).attr('data-score');
-      }
-    });
-  }
-
-});
-
-// ====================================================================== /
-// Retrieve controller and action from layout...
-// ====================================================================== /
-function getControllerAction() {
-
-  current_Controller = $('body').data('controller');
-  current_Action = $('body').data('action');
-
-  // var msg = current_Controller + ' : ' + current_Action;
-  // console.log(msg);
-
-}
-
-// ====================================================================== /
-// General tinkering...
-// ====================================================================== /
-function jemSpy(target) {
-
-  var client_Width = $(target)[0].clientWidth;
-  var client_Height = $(target)[0].clientHeight;
-  var msg = target + ' - ' + client_Width + ' : ' + client_Height;
-  $('#azjem').text(msg);
-
-  // var client_Width = $('.view-div').prop('clientWidth');
-  // var client_Height = $('.view-div').prop('clientHeight');
-
-  // $('#azjem').text(current_Controller + ' : ' + current_Action);
-  // var msg = prefix + ' - ' + current_Controller + ' : ' + current_Action;
-  // console.log(msg);
-
-  // $('#azjem').text($('body').prop('baseURI'));
-
-}

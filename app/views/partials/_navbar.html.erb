@@ -8,7 +8,15 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <p class="navbar-brand"><strong><em>Polar Clock Shop</em></strong></p>
+      <p class="navbar-brand">
+        <%= link_to contact_path, title:"Contact...", toggle:"tooltip", "data-placement":"bottom" do %>
+          <span id="brand">
+            <strong>
+              <em>Polar Clock Shop</em>
+            </strong>
+          </span>
+        <% end %>
+      </p>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->

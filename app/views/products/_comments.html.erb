@@ -3,7 +3,7 @@
   <h3>Reviews : <%= @comments.count %></h3>
   <div class="product-reviews">
     <% @comments.each do |comment| %>
-      <div class="row" style="margin: 1rem; border: 1px solid white; background: #aaa">
+      <div class="row comment-row">
         <div class="col col-md-12 text-center">
           <p><%= comment.user.first_name %> <small><em><%= "#{time_ago_in_words(comment.created_at)} ago" %></em></small></p>
           <p><%= "Rating: #{comment.rating} of 5" %></p>
@@ -23,8 +23,7 @@
       </div>
     <% end %>
 
-    <!-- TODO : remove constant 3 -->
-    <% if @comments.count > 3 %>
+    <% if @comments.count > @comment_pagination %>
       <div class="row">
         <div class="col col-md-12 text-center">
           <%= will_paginate @comments, renderer: BootstrapPagination::Rails %>

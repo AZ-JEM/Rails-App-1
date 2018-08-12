@@ -11,36 +11,37 @@
   <!-- admin controls -->
   <% if signed_in? && current_user.admin? %>
     <div class="col-sm-2 col-sm-offset-8">
-      <p style="margin-top: 10px"><%= link_to 'Table View...', table_path, class:"btn btn-md btn-default center-block" %></p>
+      <p class="title-control"><%= link_to 'Table View...', table_path, class:"btn btn-md btn-default center-block" %></p>
     </div>
   <% end %>
 </div>
 
+<!-- TODO: move to stylesheet -->
 <hr style="margin: 0 auto;">
 <br>
 
 <div class="row">
   <% @products.each do |product| %>
     <div class="col col-md-4 col-sm-6 col-xs-12">
-      <div class="text-center" style="background: #555; color: orange;"><%= product.name %></div>
-      <div style="background: #ccc;">
+      <div class="product-title text-center"><%= product.name %></div>
+      <div class="product-image">
         <%=
           link_to image_tag(product.image_url,
           class: "img-responsive center-block"),
           {controller: 'products', action: 'show', id: product.id}
         %>
       </div>
-      <p style="min-height: 10rem; padding: 1rem; background: #aaa; margin: 0;"><%= product.description %></p>
-      <p class="text-center" style="background: #555; color: orange;"><%= number_to_currency(product.price) %></p>
+      <p class="product-desc"><%= product.description %></p>
+      <p class="product-title text-center"><%= number_to_currency(product.price) %></p>
       <br>
     </div>
   <% end %>
 </div>
 
+<!-- TODO: move to stylesheet -->
 <hr style="margin-top: 0;">
 
-<!-- TODO: remove constant -->
-<% if @products.count > 6  %>
+<% if @products.count > @product_pagination %>
   <div class="row">
     <div class="col col-md-12 text-center">
       <%= will_paginate @products, renderer: BootstrapPagination::Rails %>

@@ -5,7 +5,7 @@ class ProductsController < ApplicationController
   before_action :authenticate_user!, only: [:edit, :update, :destroy]
 
   def table
-    @products = Product.all.paginate(page: params[:page], per_page: 6)
+    @products = Product.all.paginate(page: params[:page], per_page: @table_pagination)
   end
 
   # GET /products
@@ -32,7 +32,7 @@ class ProductsController < ApplicationController
       record_set = Product.all
     end
     # paginate records
-    @products = record_set.paginate(page: params[:page], per_page: 6)
+    @products = record_set.paginate(page: params[:page], per_page: @product_pagination)
   end
 
   # GET /products/1
@@ -42,7 +42,7 @@ class ProductsController < ApplicationController
     @page_title = @product.name
     # Exercise 5.8
     # add pagination
-    @comments = @product.comments.order("created_at DESC").paginate(page: params[:page], per_page: 3)
+    @comments = @product.comments.order("created_at DESC").paginate(page: params[:page], per_page: @comment_pagination)
   end
 
   # Authorization ---------------------------------------- /

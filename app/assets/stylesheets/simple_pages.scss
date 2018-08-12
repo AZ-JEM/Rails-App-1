@@ -67,6 +67,11 @@ p {
   color: #000;
 }
 
+#brand {
+  text-decoration: none;
+  color: $color-lo;
+}
+
 // ====================================================================== /
 // alerts and notices
 // ====================================================================== /
@@ -184,11 +189,46 @@ footer {
 }
 
 // ====================================================================== /
-// Bootstrap rows
+// Products and Comments
 // ====================================================================== /
-// .row {
-//   border: 1px solid white;
-// }
+.product-row {
+  border: 1px solid white;
+  background: #aaa;
+  margin: 1rem;
+  padding: 1rem 0;
+}
+
+.comment-row {
+  margin: 1rem;
+  border: 1px solid white;
+  background: #aaa;
+}
+
+.comment-form {
+  margin: 1rem;
+  border: 1px solid white;
+  padding: 1rem;
+}
+
+.title-control {
+  margin-top: 10px
+}
+
+.product-title {
+  background: #555;
+  color: $color-lo;
+}
+
+.product-image {
+  background: #ccc;
+}
+
+.product-desc  {
+  min-height: 10rem;
+  padding: 1rem;
+  background: #aaa;
+  margin: 0;
+}
 
 // ====================================================================== /
 //  Let's get responsive...
@@ -199,8 +239,9 @@ footer {
 // Default : {single line large or single line hamburger}
 main {
   margin: 80px auto 60px auto;
+  background: #777;
+  padding-bottom: 1em;
 }
-
 // mid-way stacking of Branding, Search...
 // ...Navigation links
 @media screen and (min-width: 768px) and (max-width: 1306px), screen and (max-width: 350px) {
