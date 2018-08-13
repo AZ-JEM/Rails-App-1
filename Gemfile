@@ -39,6 +39,9 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
+  # Exercise 6.1 : TDD
+  gem 'rspec-rails', '~> 3.7'
+  # development RDBMS
   gem 'sqlite3'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

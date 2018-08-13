@@ -1,3 +1,3 @@
 ---
-Section 5 submission...
+Exercise 6.1
 ---
