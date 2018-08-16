@@ -1,17 +1,16 @@
 source 'https://rubygems.org'
 
-# Exercise 3.10
+# foundation
 ruby '2.5.0'
 
+# framework
+gem 'rails', '~> 5.2.0'
+
+# version control
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
-
-
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-# gem 'rails', '~> 5.1.6'
-gem 'rails', '~> 5.2.0'
 
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
@@ -39,8 +38,12 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
-  # Exercise 6.1 : TDD
+  # Exercise 6.1 : Unit tests
   gem 'rspec-rails', '~> 3.7'
+  # Exercise 6.2 : Functional tests
+  # *** controller specs are discouraged as of v3.5 ***
+  # *** request specs are recommended ***
+  gem 'rails-controller-testing'
   # development RDBMS
   gem 'sqlite3'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
