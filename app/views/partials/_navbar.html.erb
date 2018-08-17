@@ -9,7 +9,7 @@
         <span class="icon-bar"></span>
       </button>
       <p class="navbar-brand">
-        <%= link_to contact_path, title:"Contact...", toggle:"tooltip", "data-placement":"bottom" do %>
+        <%= link_to root_path, title:"Home...", toggle:"tooltip", "data-placement":"bottom" do %>
           <span id="brand">
             <strong>
               <em>Polar Clock Shop</em>
@@ -35,12 +35,6 @@
 
       <!-- navigation anchors -->
       <ul class="nav navbar-nav navbar-right">
-        <!-- home -->
-        <li class="<%= 'active' if current_page?(root_path) %>">
-          <%= link_to root_path, title:"Landing page", toggle:"tooltip", "data-placement":"bottom" do %>
-            <i class="fas fa-home"></i> Home
-          <% end %>
-        </li>
         <!-- products -->
         <li class="<%= 'active' if current_page?(products_path) %>">
           <%= link_to products_path, title:"List all products...", toggle:"tooltip", "data-placement":"bottom" do %>
@@ -60,6 +54,12 @@
             <i class="fas fa-clock"></i> Demo
           <% end %>
         </li>
+        <!-- contact -->
+        <li class="<%= 'active' if current_page?(contact_path) %>">
+          <%= link_to contact_path, title:"Contact...", toggle:"tooltip", "data-placement":"bottom" do %>
+            <i class="fas fa-envelope"></i> Contact
+          <% end %>
+        </li>
         <!-- Authentication -->
         <% if current_user %>
           <!-- MANAGE USER INFO -->
@@ -75,12 +75,12 @@
             <% end %>
           </li>
         <% else %>
-        <!-- SIGN IN or SIGN UP -->
-        <li class="<%= 'active' if current_page?(new_user_session_path) %>">
-          <%= link_to new_user_session_path, method: :get, title:"Sign-in OR Sign-up", toggle:"tooltip", "data-placement":"bottom" do %>
-            <i class="fas fa-lock"></i> Sign In
-          <% end %>
-        </li>
+          <!-- SIGN IN or SIGN UP -->
+          <li class="<%= 'active' if current_page?(new_user_session_path) %>">
+            <%= link_to new_user_session_path, method: :get, title:"Sign-in OR Sign-up", toggle:"tooltip", "data-placement":"bottom" do %>
+              <i class="fas fa-lock"></i> Sign In
+            <% end %>
+          </li>
         <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->
