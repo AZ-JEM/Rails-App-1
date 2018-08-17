@@ -16,3 +16,6 @@ module RailsApp1
     # -- all .rb files in that directory are automatically loaded.
   end
 end
+
+# RSpec boolean serialization deprecation error :
+Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
