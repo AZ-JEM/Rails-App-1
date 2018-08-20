@@ -18,9 +18,9 @@ RSpec.describe UsersController, type: :controller do
 
     context 'when a user is logged in' do
       before do
-        puts '*' * 100
-        puts user.inspect
-        puts '*' * 100
+        # puts '*' * 100
+        # puts user.inspect
+        # puts '*' * 100
         sign_in user
       end
       it 'loads user details' do
@@ -32,9 +32,9 @@ RSpec.describe UsersController, type: :controller do
 
     context 'when a user is not logged in' do
       before do
-        puts '*' * 100
-        puts user.inspect
-        puts '*' * 100
+        # puts '*' * 100
+        # puts user.inspect
+        # puts '*' * 100
         sign_out user
       end
       it 'redirects to login' do

@@ -33,9 +33,13 @@ describe Product do
   # ------------------------------------------------------------ /
   context "Aggregations" do
     # Create test product satisfying all existing validations :
-    let(:product) { Product.create!(name: "Widget", description: "Widget description...", price: 0.50) }
+    # let(:product) { Product.create!(name: "Widget", description: "Widget description...", price: 0.50) }
+    product = FactoryBot.create(:product)
+    # puts product.inspect
     # Create test user...
-    let(:user) { User.create!( email: "user1@mail.app", first_name: "User", last_name: "Persona", password: "abc123" ) }
+    # let(:user) { User.create!( email: "user1@mail.app", first_name: "User", last_name: "Persona", password: "abc123" ) }
+    user = FactoryBot.create(:user)
+    # puts user.inspect
     # Create product comments...
     before do
       product.comments.create!(rating: 1, user: user, body: "Low")

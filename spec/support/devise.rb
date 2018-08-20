@@ -1,3 +1,6 @@
-RSpec.configure do |config|
-  config.include Devise::Test::IntegrationHelpers, type: :feature
-end
+# JEM
+# This loop is already performed within rails_helper.rb
+
+# RSpec.configure do |config|
+#
+# end

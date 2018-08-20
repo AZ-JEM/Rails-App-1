@@ -2,9 +2,11 @@ require 'rails_helper'
 
 RSpec.describe OrdersController, type: :controller do
 
-  # @user = FactoryBot.create(:user)
-  let(:user) { User.create!( email: "user1@mail.app", first_name: "User", last_name: "Persona", password: "abc123" ) }
-  let(:product) { Product.create!(name: "Widget", description: "Widget description...", price: 0.50) }
+  user = FactoryBot.create(:user)
+  product = FactoryBot.create(:product)
+
+  # let(:user) { User.create!( email: "user1@mail.app", first_name: "User", last_name: "Persona", password: "abc123" ) }
+  # let(:product) { Product.create!(name: "Widget", description: "Widget description...", price: 0.50) }
 
   # index
   describe 'GET #index' do
