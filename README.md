@@ -1,3 +1,3 @@
 ---
-Exercise 6.4
+Exercise 6.4 (rubric)
 ---
