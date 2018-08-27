@@ -34,6 +34,11 @@
       <% end %>
     </p>
 
+    <!-- Exercise 6.5 -->
+    <%= form_with(url: '/payments/create') do |form| %>
+      <%= render partial: "partials/stripe_checkout_button" %>
+    <% end %>
+
     <% if signed_in? && current_user.admin? %>
       <%= link_to 'Edit product...', edit_product_path(@product), class:"btn btn-md btn-default" %>
     <% end %>
