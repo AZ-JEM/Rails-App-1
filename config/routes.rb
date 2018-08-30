@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
 
-  get 'users/index', to: 'users#index'
-  get 'users/show'
+  # Exercise 6.6 (requires POST)
+  # "get" from generator...
+  post 'payments/create'
+
+  get '/users', to: 'users#index'
+  # get 'users/show'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   # get 'simple_pages/index'

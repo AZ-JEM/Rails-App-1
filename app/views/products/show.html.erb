@@ -35,8 +35,11 @@
     </p>
 
     <!-- Exercise 6.5 -->
-    <%= form_with(url: '/payments/create') do |form| %>
-      <%= render partial: "partials/stripe_checkout_button" %>
+    <% if current_user %>
+      <%= form_with(url: '/payments/create') do |form| %>
+        <%= hidden_field_tag(:product_id, @product.id) %>
+        <%= render partial: "partials/stripe_checkout_button" %>
+      <% end %>
     <% end %>
 
     <% if signed_in? && current_user.admin? %>

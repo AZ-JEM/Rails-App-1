@@ -22,13 +22,32 @@ class OrdersController < ApplicationController
     @page_title = @order.product.name
   end
 
+  # -------------------------------------------------- /
+  # JEM : 180829
+  # I suppose that now is the time...
+  # -------------------------------------------------- /
   def new
+    @order = Order.new
   end
 
+  # JEM : 180829
   def create
+    # bare minimum...
+    # @order = Order.new(params.require(:order).permit(:user_id, :prod_id, :price))
+    @order = Order.new(order_params)
+    @order.save
   end
 
+  # JEM : 180829
   def destroy
+    @order.destroy
+  end
+
+# JEM : 180829
+private
+
+  def order_params
+    params.require(:order).permit(:user_id, :prod_id, :price)
   end
 
 end

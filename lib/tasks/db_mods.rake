@@ -10,4 +10,10 @@ namespace :db_mods do
     puts "...Complete"
   end
 
+  task price_fix: :environment do
+    puts "Begin..."
+    Product.where("price = 0.25").update_all(price: 0.50)
+    puts "...Complete"
+  end
+  
 end
