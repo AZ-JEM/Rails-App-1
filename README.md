@@ -1,3 +1,3 @@
 ---
-Exercise 6.5
+Exercise 6.6
 ---
