@@ -1,3 +1,3 @@
-# Exercise 6.8
+# Exercise 6.9
 
-Brakeman security audit
+elevateZoom via jQuery

@@ -26,6 +26,9 @@ $(document).on('turbolinks:load', function() {
   // Ruby embedded in Javascript!!!
   // why can't I retrieve controller_name and action_name directly like this ?
   if ((current_Controller == 'products') && (current_Action == 'show')) {
+
+    $('.img-zoom').elevateZoom();
+
     $('.rating').raty({
       starHalf: '<%= asset_path "star-half.png" %>',
       starOff: '<%= asset_path "star-off.png" %>',
