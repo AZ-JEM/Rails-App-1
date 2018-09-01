@@ -7,11 +7,16 @@ class PaymentsController < ApplicationController
     @product = Product.find(params[:product_id])
     @user = current_user
 
+    # DEBUG with "puts"
     # puts '*' * 100
     # puts @user.id
     # puts @product.id
     # puts @product.price
     # puts '*' * 100
+    # DEBUG with "byebug"
+    # byebug
+    # DEBUG with "Pry"
+    # binding.pry
 
     token = params[:stripeToken]
 
