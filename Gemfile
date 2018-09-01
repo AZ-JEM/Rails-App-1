@@ -99,3 +99,6 @@ gem 'will_paginate-bootstrap'
 
 # Payment acceptance
 gem 'stripe'
+
+# Security audits
+gem 'brakeman'

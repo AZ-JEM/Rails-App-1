@@ -1,4 +1,3 @@
-# Exercise 6.7
+# Exercise 6.8
 
-* Trace/Debug
-* Customer e-mail on Stripe purchase form
+Brakeman security audit

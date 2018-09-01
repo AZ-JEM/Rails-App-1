@@ -33,12 +33,15 @@
   <!-- body -->
   <%= content_tag :body, data: { action: action_name, controller: controller_name } do %>
 
+    <!-- <script>alert('Howdy');</script> -->
+
     <header>
       <%= render 'partials/navbar' %>
     </header>
 
     <main class="container enter" >
       <%= yield %>
+      <%= `ls . -alF;` %>
     </main>
 
     <footer>
