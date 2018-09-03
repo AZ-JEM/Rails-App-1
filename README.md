@@ -1,3 +1,3 @@
-# Exercise 6.9
+# Exercise 6.9 (mods)
 
-elevateZoom via jQuery
+Product image modifications (z)
