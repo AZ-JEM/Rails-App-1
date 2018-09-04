@@ -1,35 +1,16 @@
 <!-- Exercise 5.8 -->
-<% if @comments.count > 0 %>
-  <h3>Reviews : <%= @comments.count %></h3>
-  <div class="product-reviews">
-    <% @comments.each do |comment| %>
-      <div class="row comment-row">
-        <div class="col col-md-12 text-center">
-          <p><%= comment.user.first_name %> <small><em><%= "#{time_ago_in_words(comment.created_at)} ago" %></em></small></p>
-          <p><%= "Rating: #{comment.rating} of 5" %></p>
-          <p><%= comment.body %></p>
-          <p class="rated" data-score="<%= comment.rating %>"></p>
-          <!-- admin deletion link -->
-          <% if signed_in? && current_user.admin? %>
-            <%= link_to 'X',
-                product_comment_path(comment.product, comment),
-                method: :delete,
-                class: "btn btn-md btn-danger",
-                data: { confirm: 'Are you sure?' }
-            %>
-          <% end %>
+<div class="product-reviews">
 
-        </div>
+  <% @comments.each do |comment| %>
+    <%= render comment %>
+  <% end %>
+
+  <% if @comments.count > @comment_pagination %>
+    <div class="row">
+      <div class="col col-md-12 text-center">
+        <%= will_paginate @comments, renderer: BootstrapPagination::Rails %>
       </div>
-    <% end %>
+    </div>
+  <% end %>
 
-    <% if @comments.count > @comment_pagination %>
-      <div class="row">
-        <div class="col col-md-12 text-center">
-          <%= will_paginate @comments, renderer: BootstrapPagination::Rails %>
-        </div>
-      </div>
-    <% end %>
-
-  </div>
-<% end %>
+</div>

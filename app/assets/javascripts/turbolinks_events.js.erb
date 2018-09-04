@@ -4,6 +4,10 @@
 var current_Controller;
 var current_Action;
 
+// $(document).on('turbolinks:load ajaxSuccess', function() {
+//   refreshRating("AJAX");
+// });
+
 $(document).on('turbolinks:load', function() {
 
   // determine precisely where we are at the moment...
@@ -22,27 +26,10 @@ $(document).on('turbolinks:load', function() {
   $('#azjem').delay(delay_ms + fade_ms).fadeIn(fade_ms);
 
   // Raty ratings...
-  if ((current_Controller == 'products') && (current_Action == 'show')) {
-
+  //if ((current_Controller == 'products') && (current_Action == 'show')) {
     $('.img-zoom').elevateZoom();
-
-    $('.rating').raty({
-      starHalf: '<%= asset_path "star-half.png" %>',
-      starOff: '<%= asset_path "star-off.png" %>',
-      starOn: '<%= asset_path "star-on.png" %>',
-      scoreName: 'comment[rating]'
-    });
-
-    $('.rated').raty({
-      starHalf: '<%= asset_path "star-half.png" %>',
-      starOff: '<%= asset_path "star-off.png" %>',
-      starOn: '<%= asset_path "star-on.png" %>',
-      readOnly: true,
-      score: function() {
-        return $(this).attr('data-score');
-      }
-    });
-  }
+    refreshRating("TL-LOAD");
+  //}
 
 });
 
@@ -59,6 +46,50 @@ function getControllerAction(track) {
     console.log(msg);
   }
 
+}
+
+// ====================================================================== /
+// Initialize or refresh Raty plugin...
+// ====================================================================== /
+function refreshRating(caller) {
+  console.log (caller);
+  $('.rating').raty({
+    starHalf: '<%= asset_path "star-half.png" %>',
+    starOff: '<%= asset_path "star-off.png" %>',
+    starOn: '<%= asset_path "star-on.png" %>',
+    scoreName: 'comment[rating]'
+  });
+
+  $('.rated').raty({
+    starHalf: '<%= asset_path "star-half.png" %>',
+    starOff: '<%= asset_path "star-off.png" %>',
+    starOn: '<%= asset_path "star-on.png" %>',
+    readOnly: true,
+    score: function() {
+      return $(this).attr('data-score');
+    }
+  });
+}
+
+// ====================================================================== /
+// Initialize or refresh Raty plugin...
+// ====================================================================== /
+var refreshAverageRating = function(caller) {
+// function refreshAverageRating(caller) {
+  console.log (caller);
+
+  $('#average_rating').raty({
+    starHalf: '<%= asset_path "star-half.png" %>',
+    starOff: '<%= asset_path "star-off.png" %>',
+    starOn: '<%= asset_path "star-on.png" %>',
+    readOnly: true,
+    score: function() {
+      return $(this).attr('data-score');
+    }
+  });
+  // $('#average_rating').raty( 'readOnly', false );
+  // $('#average_rating').raty( 'score', $('#average-rating').attr('data-score'));
+  // $('#average_rating').raty( 'readOnly', true );
 }
 
 // ====================================================================== /
@@ -107,3 +138,7 @@ document.addEventListener('turbolinks:render', function() {
 */
 
 // 9 : Document Loaded...
+
+// $(document).on('turbolinks:load ajaxSuccess', function() {
+//   refreshAverageRating("AJAX-SUCCESS");
+// });

@@ -22,11 +22,9 @@
       <%= number_to_currency(@product.price) %>
     </p>
 
-    <p>
-      <span class="rated" data-score="<%= @product.average_rating %>"></span>
-    </p>
+    <div id="average-rating" class="rated" data-score="<%= @product.average_rating %>"></div>
 
-    <p>
+    <p id="average-rating-text">
       <% if @product.average_rating %>
         <em>Average rating:</em>
         <%= number_to_human(@product.average_rating) %>
@@ -53,4 +51,8 @@
 
 <!-- Exercise 5.8 -->
 <%= render 'new_comment' %>
-<%= render 'comments' %>
+
+<% if @comments.count > 0 %>
+  <h3 id="comment-cnt">Reviews : <%= @comments.count %></h3>
+  <%= render 'comments' %>
+<% end %>

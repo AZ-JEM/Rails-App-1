@@ -1,0 +1,20 @@
+// Exercise 6.10 : AJAX
+
+$('#new_comment').hide();
+$('.comment-form').html("Thanks for providing a review!");
+$('.product-reviews').prepend("<%= j render @comment %>");
+// refreshRating("AJAX");
+
+$('#average-rating').attr('data-score', "<%= @product.average_rating %>");
+// $('#average_rating').raty( 'readOnly', false );
+// $('#average_rating').raty( 'score', "<%= @product.average_rating %>" );
+// $('#average_rating').raty( 'readOnly', true );
+// $('#average-rating').raty('set', { readOnly: true, score: 1 });
+// $('#average-rating').css('background', '#000');
+// $('#average_rating').html('"Test..."');
+// refreshAverageRating("ID-AJAX");
+refreshRating("END LOC");
+
+// #('#comment-cnt').html("Howdy");
+// #('#average-rating-text').html("<%= j number_to_human(@product.average_rating) %>");
+// #('#average-rating-text').html("XXX");

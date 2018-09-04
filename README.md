@@ -1,3 +1,5 @@
 # Exercise 6.9 (mods)
+Product image modifications (elevateZoom)
 
-Product image modifications (z)
+# Exercise 6.10
+AJAX...
