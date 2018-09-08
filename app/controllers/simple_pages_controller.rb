@@ -1,5 +1,7 @@
 class SimplePagesController < ApplicationController
 
+  layout "center"
+
   def index
   end
 

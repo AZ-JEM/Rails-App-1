@@ -78,17 +78,17 @@ p {
 .alert {
   margin-top: 1.5rem;
   padding: 0.25rem 1rem;
-  background: #a00;
-  color: #eee;
-  border: 1px solid white;
+  background: #b82b2b;
+  color: white;
+  border: 1px solid $color-lo;
 }
 
 .notice {
   margin-top: 1.5rem;
   padding: 0.25rem 1rem;
-  background: #0a0;
-  color: #eee;
-  border: 1px solid white;
+  background: #070;
+  color: white;
+  border: 1px solid $color-lo;
 }
 
 // ====================================================================== /
@@ -233,11 +233,16 @@ footer {
 // ====================================================================== /
 //  Let's get responsive...
 // ---------------------------------------------------------------------- /
+// navbar 71px .. 111px (stacked)
+// carousel 460px
+// footer 50px
+// sum = 621px
+// ---------------------------------------------------------------------- /
 // The new area of interest is : {768 < width < 1306}
 // - at this range the navbar is "stacked"... (~110px)
 // ====================================================================== /
 // Default : {single line large or single line hamburger}
-main {
+#view-standard {
   margin: 80px auto 60px auto;
   background: #777;
   padding-bottom: 1em;
@@ -245,22 +250,21 @@ main {
 // mid-way stacking of Branding, Search...
 // ...Navigation links
 @media screen and (min-width: 768px) and (max-width: 1306px), screen and (max-width: 350px) {
-  main {
+  #view-standard {
     margin: 120px auto 60px auto;
   }
 }
 
 // very narrow displays cause stacking of hamburger and branding (~120px)...
 @media screen and (max-width: 350px) {
-  main {
+  #view-standard {
     margin: 130px auto 60px auto;
   }
 }
 
-// navbar 71px .. 111px (stacked)
-// carousel 460px
-// footer 50px
-// sum = 621px
+// ====================================================================== /
+// Centered views only...
+// ====================================================================== /
 @media (min-height: 625px) {
   #view-container {
     margin: 0;

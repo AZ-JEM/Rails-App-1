@@ -28,7 +28,9 @@
           <%= form.text_field :q, id: "q", value: params[:q], class: "form-control", "placeholder": "Search products..." %>
         </div>
         <div class="actions form-group">
-          <%= form.submit "Go", class: "btn btn-default" %>
+          <button type="submit" name="commit" value="Go" class="btn btn-primary" data-disable-with="Go" >
+            <i style="font-size: 2rem;" class="fas fa-search"></i>
+          </button>
         </div>
       <% end %>
       <!-- </form> -->
