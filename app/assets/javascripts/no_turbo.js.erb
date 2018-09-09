@@ -8,7 +8,8 @@ var current_Action;
 //   refreshRating("AJAX");
 // });
 
-$(document).on('turbolinks:load', function() {
+// $(document).on('turbolinks:load', function() {
+$(document).ready( function() {
 
   // determine precisely where we are at the moment...
   getControllerAction(false);
@@ -26,10 +27,10 @@ $(document).on('turbolinks:load', function() {
   $('#azjem').delay(delay_ms + fade_ms).fadeIn(fade_ms);
 
   // Raty ratings...
-  //if ((current_Controller == 'products') && (current_Action == 'show')) {
+  if ((current_Controller == 'products') && (current_Action == 'show')) {
     $('.img-zoom').elevateZoom();
     refreshRating("TL-LOAD");
-  //}
+  }
 
 });
 
@@ -51,8 +52,7 @@ function getControllerAction(track) {
 // ====================================================================== /
 // Initialize or refresh Raty plugin...
 // ====================================================================== /
-function refreshRating(caller) {
-  console.log (caller);
+function refreshRating() {
   $('.rating').raty({
     starHalf: '<%= asset_path "star-half.png" %>',
     starOff: '<%= asset_path "star-off.png" %>',
@@ -74,22 +74,18 @@ function refreshRating(caller) {
 // ====================================================================== /
 // Initialize or refresh Raty plugin...
 // ====================================================================== /
-var refreshAverageRating = function(caller) {
-// function refreshAverageRating(caller) {
-  console.log (caller);
-
-  $('#average_rating').raty({
-    starHalf: '<%= asset_path "star-half.png" %>',
-    starOff: '<%= asset_path "star-off.png" %>',
-    starOn: '<%= asset_path "star-on.png" %>',
-    readOnly: true,
-    score: function() {
-      return $(this).attr('data-score');
-    }
-  });
-  // $('#average_rating').raty( 'readOnly', false );
-  // $('#average_rating').raty( 'score', $('#average-rating').attr('data-score'));
-  // $('#average_rating').raty( 'readOnly', true );
+// var refreshAverageRating = function(caller) {
+function refreshAverageRating() {
+  //
+  // window.setTimeout(function() {
+    $('#average_rating').raty( 'readOnly', false );
+    $('#average_rating').raty( 'score', $('#average-rating').attr('data-score'));
+    // $('#average_rating').raty( 'readOnly', true );
+    refreshRating();
+    $('#average-rating-text').text("average-rating-text");
+    $('#comment-cnt').text("comment-cnt");
+  // }, 1000);
+  refreshRating();
 }
 
 // ====================================================================== /
