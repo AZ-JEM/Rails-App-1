@@ -28,8 +28,9 @@ $(document).ready( function() {
 
   // Raty ratings...
   if ((current_Controller == 'products') && (current_Action == 'show')) {
+    console.log("First visit...");
     $('.img-zoom').elevateZoom();
-    refreshRating("TL-LOAD");
+    refreshRating();
   }
 
 });
@@ -77,15 +78,12 @@ function refreshRating() {
 // var refreshAverageRating = function(caller) {
 function refreshAverageRating() {
   //
-  // window.setTimeout(function() {
+  window.setTimeout(function() {
     $('#average_rating').raty( 'readOnly', false );
     $('#average_rating').raty( 'score', $('#average-rating').attr('data-score'));
-    // $('#average_rating').raty( 'readOnly', true );
-    refreshRating();
-    $('#average-rating-text').text("average-rating-text");
-    $('#comment-cnt').text("comment-cnt");
-  // }, 1000);
-  refreshRating();
+    $('#average_rating').raty( 'readOnly', true );
+    console.log("Updated?");
+  }, 5000);
 }
 
 // ====================================================================== /

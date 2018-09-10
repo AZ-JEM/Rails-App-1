@@ -53,6 +53,6 @@
 <%= render 'new_comment' %>
 
 <% if @comments.count > 0 %>
-  <h3 id="comment-cnt">Reviews : <%= @comments.count %></h3>
+  <h3 id="comment-cnt">Reviews : <%#= @comments.count %></h3>
   <%= render 'comments' %>
 <% end %>
