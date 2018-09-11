@@ -105,3 +105,6 @@ gem 'stripe'
 
 # Security audits
 gem 'brakeman'
+
+# Caching
+gem 'dalli'

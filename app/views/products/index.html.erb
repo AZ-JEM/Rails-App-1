@@ -20,23 +20,35 @@
 <hr style="margin: 0 auto;">
 <br>
 
-<div class="row">
-  <% @products.each do |product| %>
-    <div class="col col-md-4 col-sm-6 col-xs-12">
-      <div class="product-title text-center"><%= product.name %></div>
-      <div class="product-image">
-        <%=
-          link_to image_tag(product.image_url,
-          class: "img-responsive center-block"),
-          {controller: 'products', action: 'show', id: product.id}
-        %>
-      </div>
-      <p class="product-desc"><%= product.description %></p>
-      <p class="product-title text-center"><%= number_to_currency(product.price) %></p>
-      <br>
-    </div>
-  <% end %>
-</div>
+<!-- Outer products cache block  -->
+<% cache(cache_key_for_products) do %>
+
+  <div class="row">
+    <% @products.each do |product| %>
+      <!-- Inner product cache block -->
+      <% cache product do %>
+
+        <div class="col col-md-4 col-sm-6 col-xs-12">
+          <div class="product-title text-center"><%= product.name %></div>
+          <div class="product-image">
+            <%=
+              link_to image_tag(product.image_url,
+              class: "img-responsive center-block"),
+              {controller: 'products', action: 'show', id: product.id}
+            %>
+          </div>
+          <p class="product-desc"><%= product.description %></p>
+          <p class="product-title text-center"><%= number_to_currency(product.price) %></p>
+          <br>
+        </div>
+
+      <% end %>
+      <!-- end : Inner product cache block -->
+    <% end %>
+  </div>
+
+<% end %>
+<!-- end : Outer products cache block  -->
 
 <!-- TODO: move to stylesheet -->
 <hr style="margin-top: 0;">
