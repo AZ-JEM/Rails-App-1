@@ -69,6 +69,7 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
+    connection_pool (2.2.2)
     crass (1.0.4)
     dalli (2.7.8)
     devise (4.5.0)
@@ -250,6 +251,7 @@ DEPENDENCIES
   cancancan
   capybara (~> 2.13)
   coffee-rails (~> 4.2)
+  connection_pool
   dalli
   devise (~> 4.4, >= 4.4.3)
   factory_bot_rails (~> 4.0)

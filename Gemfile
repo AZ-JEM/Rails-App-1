@@ -108,3 +108,4 @@ gem 'brakeman'
 
 # Caching
 gem 'dalli'
+gem 'connection_pool'
