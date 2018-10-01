@@ -262,7 +262,7 @@ DEPENDENCIES
   pg (~> 0.20)
   pry-byebug
   puma (~> 3.7)
-  rails (~> 5.2.0)
+  rails (~> 5.2.1)
   rails-controller-testing
   rspec-rails (~> 3.7)
   sass-rails (~> 5.0)
@@ -278,7 +278,7 @@ DEPENDENCIES
   will_paginate-bootstrap
 
 RUBY VERSION
-   ruby 2.5.0p0
+   ruby 2.5.1p57
 
 BUNDLED WITH
-   1.16.3
+   1.16.5
