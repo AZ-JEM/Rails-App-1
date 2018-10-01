@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
 
 # foundation
-ruby '2.5.0'
+ruby '2.5.1'
 
 # framework
-gem 'rails', '~> 5.2.0'
+gem 'rails', '~> 5.2.1'
 
 # version control
 git_source(:github) do |repo_name|
