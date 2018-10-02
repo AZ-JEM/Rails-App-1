@@ -1,7 +1,7 @@
-# No Turbo !!!
+# Exercise 6.11 : Caching
 
-* Successful removal of Turbolinks
-* Successful implementation of Exercise 6.10 : AJAX
-* CSS animations no longer require special attention on Heroku.
+* Rails.cache.read
+* Rails.cache.write
+* Rails.cache.fetch
 
-### Turbolinks is possibly an unwise default option...
+...are now Functional...
