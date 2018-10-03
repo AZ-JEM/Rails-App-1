@@ -109,3 +109,8 @@ gem 'brakeman'
 # Caching
 gem 'dalli'
 gem 'connection_pool'
+
+gem 'redis-rails'
+
+# APM
+gem 'newrelic_rpm'
