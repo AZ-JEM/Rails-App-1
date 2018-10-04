@@ -15,6 +15,7 @@ class CommentsController < ApplicationController
           format.json { render :show, status: :created, location: @product }
           # Exercise 6.10 : AJAX
           format.js
+          $redis.incr 'comment_count'
         else
           format.html { redirect_to @product, alert: 'Review was not saved successfully.' }
           format.json { render json: @comment.errors, status: :unprocessable_entity }

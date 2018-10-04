@@ -18,3 +18,5 @@ refreshRating();
 // }, 5000);
 
 //refreshAverageRating();
+
+$('#comment-cnt').html("<%= $redis.get 'comment_count' %>");
