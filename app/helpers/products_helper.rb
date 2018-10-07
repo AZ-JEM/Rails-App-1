@@ -8,9 +8,9 @@ module ProductsHelper
     # return the cache key
     key = "products/all-#{count}-#{max_updated_at}"
 
-    puts '*' * 100
-    puts key
-    puts '*' * 100
+    # puts '*' * 100
+    # puts key
+    # puts '*' * 100
 
     key
   end

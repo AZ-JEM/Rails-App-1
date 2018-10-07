@@ -5,18 +5,13 @@ $('.comment-form').html("Thanks for providing a review!");
 $('.product-reviews').prepend("<%= j render @comment %>");
 
 $('#average-rating').attr('data-score', "<%= @product.average_rating %>");
-$('#average-rating-text').html("<%= 'Average rating: ' + @product.average_rating.to_s %>");
+$('#average-rating-text').html("<%= 'Average rating: ' + number_to_human(@product.average_rating) %>");
 
 refreshRating();
 
-// window.setTimeout(function() {
-  $('#average-rating').raty( 'readOnly', false );
-  $('#average-rating').raty( 'score', $('#average-rating').attr('data-score'));
-  $('#average-rating').raty( 'readOnly', true );
-  // $('#average-rating').css( 'background-color', '#000' );
-  console.log("Updated?");
-// }, 5000);
+$('#average-rating').raty( 'readOnly', false );
+$('#average-rating').raty( 'score', $('#average-rating').attr('data-score'));
+$('#average-rating').raty( 'readOnly', true );
 
-//refreshAverageRating();
-// global comment counter
-$('#comment-cnt').html("<%= $redis.get 'comment_count' %>");
+// product scoped comment counters
+$('#comment-cnt').html("<%= $redis.get @comment_key %>");

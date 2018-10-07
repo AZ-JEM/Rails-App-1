@@ -43,8 +43,8 @@ class ProductsController < ApplicationController
     # Exercise 5.8
     # add pagination
     @comments = @product.comments.order("created_at DESC").paginate(page: params[:page], per_page: @comment_pagination)
-    # global comment counter
-    $redis.set 'comment_count', @comments.count
+    # product scoped comment counters...
+    $redis.set "#{@product.id}_comment_count", @comments.count
   end
 
   # Authorization ---------------------------------------- /
