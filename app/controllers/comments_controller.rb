@@ -15,6 +15,7 @@ class CommentsController < ApplicationController
           format.json { render :show, status: :created, location: @product }
           # Exercise 6.10 : AJAX
           format.js
+          # global comment counter
           $redis.incr 'comment_count'
         else
           format.html { redirect_to @product, alert: 'Review was not saved successfully.' }
