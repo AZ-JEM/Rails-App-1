@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  # Exercise 6.13 : ActionCable --------------------------------/
+  mount ActionCable.server => '/cable'
+
   # Home      --------------------------------------------------/
   root 'simple_pages#landing_page'
 

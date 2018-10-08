@@ -1,32 +1,19 @@
-### Exercise 6.12 response outline
+### Exercise 6.13 : ActionCable
 ---
-* Install & implement Redis
-    * Redis implemented as comment counter
-    * "set" can be found in : app/controllers/products_controller#show
-    * "incr" can be found in : app/controllers/comments_controller#create
-    * "get" can be found in : app/view/comments/create.js.erb
+
+* Compare HTTP requests with WebSockets :
+
+    * HTTP verb requests are one-shot transactions
+    * Web sockets provide persistent duplex connections.
+
 ---
-* Explain advantages of Redis over "normal cachinng"?
-    * **Memcached** is an in-memory key/value data store which has the advantage of being multi-threaded
-    * **Redis** :
-        * is not just a key/value store, but a data-structure store
-        * can be utiliized as a persistent NoSQL database
-        * can be implemented as a message broker
-        * supports snapshots, replication, namespaces, and transactions
-        * offers Geospatial support...
+
+* Two useful examples :
+
+    * Tickers, feeds, live updates of any kind
+    * Collaborative edits/updates
+
 ---
-* Research items for line item 2
-    * [YouTube Tutorial](https://www.youtube.com/watch?v=Hbt56gFj998 "Brad Traversy Redis tutorial")
-    * [Udemy Course](https://www.udemy.com/learn-redis-from-scratch/ "Eduonix Redis course")
-    * [Ruby Client](https://github.com/redis/redis-rb "Redis Ruby client")
-    * [Node Client](https://github.com/NodeRedis/node_redis "Redis Node client")
-    * [AWS ElastiCache](https://aws.amazon.com/elasticache/redis-vs-memcached "MemcacheD versus Redis")
----
-* List of *concrete* steps to application performance improvement: **un-resolved...**
-    * AJAX
-    * Caching
-    * Indexing
-    * Background processing
----
+
 Taterz -
 Jeff

@@ -11,6 +11,9 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
         if @comment.save
+          # Exercise 6.13 : ActionCable
+          ActionCable.server.broadcast 'product_channel', comment: @comment, average_rating: @comment.product.average_rating
+
           format.html { redirect_to @product, notice: 'Review was created successfully.' }
           format.json { render :show, status: :created, location: @product }
           # Exercise 6.10 : AJAX
@@ -19,7 +22,6 @@ class CommentsController < ApplicationController
           # make key available to JS...
           @comment_key = "#{@product.id}_comment_count"
           $redis.incr @comment_key
-
         else
           format.html { redirect_to @product, alert: 'Review was not saved successfully.' }
           format.json { render json: @comment.errors, status: :unprocessable_entity }

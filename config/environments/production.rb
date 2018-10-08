@@ -104,4 +104,10 @@ Rails.application.configure do
   # Authentication
   config.action_mailer.default_url_options = { host: 'https://az-jem-rails-app-1.herokuapp.com' }
 
+  # Exercise 6.13 : ActionCable
+  # user middleware
+  config.middleware.use ProductActionCable
+  config.web_socket_server_url = "wss://az-jem-rails-app-1.herokuapp.com/cable"
+  config.action_cable.allowed_request_origins = ['https://az-jem-rails-app-1.herokuapp.com', 'http://az-jem-rails-app-1.herokuapp.com']
+
 end

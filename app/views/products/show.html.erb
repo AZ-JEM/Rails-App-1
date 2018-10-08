@@ -51,8 +51,11 @@
 
 <!-- Exercise 5.8 -->
 <%= render 'new_comment' %>
-<!-- Redis target... -->
+<!-- Exercise 6.13 : ActionCable... -->
 <% if @comments.count > 0 %>
   <h3>Reviews : <span id="comment-cnt"><%= @comments.count %></span></h3>
+  <div class="alert alert-info" style="display:none" role="alert">
+    A new comment was posted...
+  </div>
   <%= render 'comments' %>
 <% end %>
