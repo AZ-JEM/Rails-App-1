@@ -1,7 +1,8 @@
 class ProductActionCable < ActionCable::Connection::WebSocket
+
   def initialize(app, options={})
     @app = app
- end
+  end
 
   def call(env)
     if ::WebSocket::Driver.websocket?(env)
@@ -10,4 +11,5 @@ class ProductActionCable < ActionCable::Connection::WebSocket
       @app.call(env)
     end
   end
+
 end
