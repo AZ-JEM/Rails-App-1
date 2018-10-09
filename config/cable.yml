@@ -10,5 +10,10 @@ production:
   # url: <%= ENV["DATABASE_URL"] %>
   adapter: redis
   url: <%= ENV["REDIS_URL"] %>
+  host: ec2-54-210-98-224.compute-1.amazonaws.com
+  port: 50639
+  password: pc8e05bcec6d733850c71375185842d13c4fccdca808d52215098ea17bbc3ea99
+  inline: true
+  timeout: 1
   # url: redis://localhost:6379/1
   # channel_prefix: rails_app_1_production

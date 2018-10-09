@@ -7,7 +7,8 @@ module PageContent
   end
 
   def set_content
-    @page_title = "Polar Clock Shop"
+    # @page_title = "Polar Clock Shop"
+    @page_title = "Redis and Faye middleware iteration"
     @seo_keywords = "AZ-JEM"
     @table_pagination = 10
     @product_pagination = 6

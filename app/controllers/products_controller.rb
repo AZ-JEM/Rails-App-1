@@ -39,7 +39,7 @@ class ProductsController < ApplicationController
   # GET /products/1.json
   def show
     # set title
-    @page_title = @product.name
+    # @page_title = @product.name
     # Exercise 5.8
     # add pagination
     @comments = @product.comments.order("created_at DESC").paginate(page: params[:page], per_page: @comment_pagination)
