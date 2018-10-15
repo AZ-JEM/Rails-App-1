@@ -5,7 +5,9 @@
     <p><%= comment.body %></p>
     <p class="rated" data-score="<%= comment.rating %>"></p>
     <!-- admin deletion link -->
-    <% if signed_in? && current_user.admin? %>
+    <!-- if signed_in? && current_user.admin? -->
+    <!-- Exercise 6.14 -->
+    <% if current_user && current_user.admin? %>
       <%= link_to 'X',
           product_comment_path(comment.product, comment),
           method: :delete,
