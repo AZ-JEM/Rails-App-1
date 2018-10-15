@@ -21,6 +21,7 @@ App.product = App.cable.subscriptions.create("ProductChannel", {
 
   // Exercise 6.14
   listen_to_comments: function() {
+    // funtion is called and product id successfully passed...
     return this.perform('listen', {
       product_id: $("[data-product-id]").data("product-id")
     });
@@ -30,5 +31,5 @@ App.product = App.cable.subscriptions.create("ProductChannel", {
 // Exercise 6.14
 $(document).ready( function() {
   App.product.listen_to_comments();
-  console.log("document ready...");
+  // console.log("document ready...");
 });
